@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台中電廠二期環說書 重點摘要｜5、7、8 章</title>
+<style>
+  :root{
+    --ink:#1b2733; --ink-soft:#48586a; --paper:#fbfaf6; --panel:#ffffff;
+    --line:#e3e0d6; --rule:#cfd8dc;
+    --gas:#0f7a6e;        /* 天然氣青綠 — 主色 */
+    --gas-soft:#e3f1ee;
+    --flame:#c8551b;      /* 警示／數據強調 */
+    --steel:#37536b;      /* 設施鋼藍 */
+    --shadow:0 1px 3px rgba(20,40,50,.06),0 8px 24px rgba(20,40,50,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.72; font-size:16px;
+  }
+  /* layout */
+  .wrap{display:grid; grid-template-columns:268px 1fr; max-width:1240px; margin:0 auto; min-height:100vh}
+  /* sidebar */
+  aside{
+    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+    border-right:1px solid var(--line); padding:30px 22px 60px; background:var(--panel);
+  }
+  .brand{font-size:13px; letter-spacing:.06em; color:var(--gas); font-weight:700; margin-bottom:4px}
+  .brand-sub{font-size:12px; color:var(--ink-soft); margin-bottom:26px; line-height:1.5}
+  nav a{display:block; text-decoration:none; color:var(--ink-soft); padding:5px 10px; border-radius:7px;
+    font-size:14px; transition:.15s; border-left:2px solid transparent}
+  nav a:hover{background:var(--gas-soft); color:var(--gas)}
+  nav a.active{background:var(--gas-soft); color:var(--gas); border-left-color:var(--gas); font-weight:600}
+  nav .grp{font-size:12px; letter-spacing:.08em; color:#9aa6b2; margin:20px 0 6px 10px; font-weight:700}
+  nav a.sub{padding-left:24px; font-size:13.5px}
+  /* main */
+  main{padding:54px 60px 120px; max-width:860px}
+  header.hero{margin-bottom:48px; padding-bottom:28px; border-bottom:2px solid var(--ink)}
+  .eyebrow{font-size:12.5px; letter-spacing:.14em; color:var(--flame); font-weight:700; text-transform:uppercase}
+  h1{font-size:30px; line-height:1.3; margin:12px 0 14px; font-weight:800; letter-spacing:-.01em}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 18px; font-size:13px; color:var(--ink-soft)}
+  .meta b{color:var(--ink); font-weight:600}
+  .disc{margin-top:18px; font-size:12.5px; color:var(--ink-soft); background:#fff7ef;
+    border:1px solid #f0d9c2; border-radius:8px; padding:10px 14px}
+  .disc b{color:var(--flame)}
+  section{margin:0 0 52px; scroll-margin-top:24px}
+  h2{font-size:23px; font-weight:800; margin:0 0 6px; letter-spacing:-.01em; display:flex; align-items:baseline; gap:12px}
+  h2 .num{font-size:14px; color:var(--gas); font-weight:700; font-variant-numeric:tabular-nums}
+  h2::after{content:""; flex:1; height:1px; background:var(--rule)}
+  h3{font-size:17px; font-weight:700; margin:26px 0 8px; color:var(--steel)}
+  h4{font-size:15px; font-weight:700; margin:18px 0 6px; color:var(--ink)}
+  p{margin:8px 0}
+  ul{margin:8px 0; padding-left:20px} li{margin:4px 0}
+  .lead{color:var(--ink-soft)}
+  /* key figures */
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin:18px 0}
+  .kpi{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 16px 14px; box-shadow:var(--shadow)}
+  .kpi .v{font-size:24px; font-weight:800; color:var(--gas); line-height:1.1; font-variant-numeric:tabular-nums}
+  .kpi .v.flame{color:var(--flame)}
+  .kpi .l{font-size:12.5px; color:var(--ink-soft); margin-top:6px}
+  /* table */
+  .tbl-cap{font-size:13px; font-weight:700; color:var(--steel); margin:22px 0 6px}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin-bottom:8px; background:var(--panel);
+    border:1px solid var(--line); border-radius:10px; overflow:hidden}
+  th,td{padding:8px 11px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--steel); color:#fff; font-weight:600; font-size:13px; border-bottom:none}
+  tbody tr:nth-child(even){background:#f7f9f9}
+  td.n,th.n{text-align:right; font-variant-numeric:tabular-nums}
+  .tnote{font-size:11.5px; color:var(--ink-soft); margin:2px 0 0}
+  /* coal chart */
+  .coal-chart{background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px 14px; margin:14px 0; box-shadow:var(--shadow)}
+  .bar-row{display:grid; grid-template-columns:200px 1fr 56px; align-items:center; gap:12px; margin:7px 0}
+  .bar-row .bl{font-size:12.5px; color:var(--ink-soft); text-align:right; line-height:1.3}
+  .bar-row .bar{background:#eef1f0; border-radius:6px; height:22px; overflow:hidden}
+  .bar-row .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--steel),#5a7d97); border-radius:6px}
+  .bar-row .bar i.zero{background:var(--flame)}
+  .bar-row .bv{font-size:14px; font-weight:700; color:var(--steel); font-variant-numeric:tabular-nums}
+  .bar-row .bv.flame{color:var(--flame)}
+  .coal-chart .cu{font-size:11.5px; color:var(--ink-soft); text-align:right; margin-top:6px}
+  /* ladder */
+  .ladder{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:14px 0}
+  .ladder .step{background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:12px 10px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px}
+  .ladder .step.term{border-color:var(--gas); background:var(--gas-soft)}
+  .ladder .stage{font-size:12px; color:var(--ink-soft); line-height:1.3; font-weight:600; min-height:34px}
+  .ladder .stage small{font-weight:400; color:#9aa6b2}
+  .ladder .run{font-size:14px; color:var(--gas); background:#fff; border:1px solid var(--gas-soft);
+    border-radius:6px; padding:5px 6px; text-align:center}
+  .ladder .step.term .run{background:#fff}
+  .ladder .bk{font-size:11.5px; color:var(--steel)}
+  .ladder .coal{font-size:11.5px; color:var(--ink-soft); border-top:1px dashed var(--line); padding-top:6px}
+  .ladder .coal.flame{color:var(--flame); font-weight:700}
+  .ladder .cut{color:var(--flame); font-weight:700; margin-left:2px}
+  /* horizontal timeline */
+  .timeline{margin:14px 0}
+  .tl-track{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative}
+  .tl-col{position:relative; padding:0 8px; text-align:center}
+  .tl-col:not(:last-child)::after{content:"›"; position:absolute; right:-7px; top:84px;
+    color:var(--rule); font-size:22px; z-index:2}
+  .tl-yr{font-size:12.5px; font-weight:800; color:var(--ink); margin-bottom:6px; font-variant-numeric:tabular-nums}
+  .tl-yr .yt{display:inline-block; font-size:9.5px; font-weight:600; vertical-align:middle; margin-left:4px;
+    padding:1px 5px; border-radius:10px; background:var(--steel); color:#fff; letter-spacing:.03em}
+  .tl-yr .yt.e{background:#fff; color:var(--flame); border:1px solid var(--flame)}
+  .tl-gas{font-size:12px; color:var(--gas); min-height:42px; display:flex; align-items:center;
+    justify-content:center; gap:5px; line-height:1.3; font-weight:600}
+  .tl-gas .dot{width:9px; height:9px; border-radius:50%; background:#cdded9; flex:none}
+  .tl-gas .dot.on{background:var(--gas); box-shadow:0 0 0 3px var(--gas-soft)}
+  .tl-stage{background:var(--steel); color:#fff; border-radius:8px; padding:8px 6px; font-size:12.5px;
+    font-weight:600; line-height:1.3; position:relative}
+  .tl-col.term .tl-stage{background:var(--gas)}
+  .tl-stage .phase{display:block; font-size:10.5px; letter-spacing:.05em; opacity:.8; font-weight:400; margin-bottom:2px}
+  .tl-stage small{font-weight:400; opacity:.75}
+  .tl-coal{margin-top:10px; display:flex; flex-direction:column; gap:5px; align-items:center}
+  .tl-coal .run{font-size:12.5px; font-weight:700; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:20px; padding:2px 10px}
+  .tl-coal .run.g6{color:var(--gas); border-color:var(--gas)}
+  .tl-coal .ev{font-size:11px; color:var(--ink-soft); line-height:1.35}
+  .tl-coal .ev small{font-size:10px; opacity:.85}
+  .tl-coal .ev.bk{color:var(--steel)}
+  .tl-coal .ev.cut{color:var(--flame)}
+  .tl-use{margin-top:10px; font-size:18px; font-weight:800; color:var(--steel); font-variant-numeric:tabular-nums}
+  .tl-use.flame{color:var(--flame)}
+  .tl-use .d{display:block; font-size:11px; font-weight:700; color:var(--flame)}
+  .tl-axis{display:flex; justify-content:space-between; align-items:center; margin-top:14px;
+    padding-top:10px; border-top:2px solid var(--ink); font-size:11.5px; color:var(--ink-soft)}
+  .tl-axis .arrow{font-weight:700; color:var(--ink); letter-spacing:.1em}
+  /* callout */
+  .note{background:var(--gas-soft); border-left:3px solid var(--gas); border-radius:0 8px 8px 0;
+    padding:12px 16px; margin:16px 0; font-size:14px}
+  .note b{color:var(--gas)}
+  .tag{display:inline-block; background:var(--steel); color:#fff; font-size:11px; padding:2px 8px;
+    border-radius:20px; margin-right:6px; vertical-align:middle}
+  /* 原文出處標註 */
+  .src{font-size:12px; color:var(--steel); background:#f3f6f7; border:1px dashed var(--rule);
+    border-radius:6px; padding:5px 11px; margin:2px 0 14px; line-height:1.55}
+  .src::before{content:"📄 原文出處　"; font-weight:700; color:var(--gas)}
+  .src b{color:var(--flame); font-weight:600; font-variant-numeric:tabular-nums}
+  .src .pg{color:var(--ink-soft); font-variant-numeric:tabular-nums}
+  @media(max-width:880px){
+    .wrap{grid-template-columns:1fr}
+    aside{position:static; height:auto; border-right:none; border-bottom:1px solid var(--line)}
+    main{padding:32px 22px 80px}
+    nav{columns:2; column-gap:18px}
+    .ladder{grid-template-columns:1fr 1fr}
+    .tl-track{min-width:620px}
+    .timeline{overflow-x:auto; -webkit-overflow-scrolling:touch}
+    .bar-row{grid-template-columns:130px 1fr 48px; gap:8px}
+    .bar-row .bl{font-size:11.5px}
+  }
+</style>
+
+<style>
+  .phase-tabs{display:flex; gap:8px; margin-bottom:22px}
+  .phase-tabs button{flex:1; font:inherit; font-size:13.5px; font-weight:700; cursor:pointer;
+    padding:10px 8px; border-radius:9px; border:1px solid var(--line); background:#fff; color:var(--ink-soft);
+    line-height:1.3; transition:.15s}
+  .phase-tabs button small{display:block; font-weight:400; font-size:11px; color:#9aa6b2; margin-top:2px}
+  .phase-tabs button.on{background:var(--gas); color:#fff; border-color:var(--gas)}
+  .phase-tabs button.on small{color:rgba(255,255,255,.85)}
+  .phase-panel{display:none}
+  .phase-panel.on{display:block}
+  .nav-block{display:none}
+  .nav-block.on{display:block}
+</style>
+
+<style id="enhance">
+  /* 閱讀進度條 */
+  #progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:1000;
+    background:linear-gradient(90deg,var(--gas),var(--flame)); transition:width .1s linear}
+  /* 控制鈕（手機目錄用） */
+  .ctrl-btn{font:inherit; font-size:13px; font-weight:600; cursor:pointer; line-height:1;
+    padding:8px 12px; border-radius:20px; border:1px solid var(--line);
+    background:var(--panel); color:var(--ink-soft); box-shadow:var(--shadow); transition:.15s}
+  .ctrl-btn:hover{color:var(--gas); border-color:var(--gas)}
+  .ctrl-btn.on{background:var(--gas); color:#fff; border-color:var(--gas)}
+  /* 回到頂端 */
+  #toTop{position:fixed; right:18px; bottom:22px; z-index:900; width:44px; height:44px;
+    border-radius:50%; border:none; background:var(--gas); color:#fff; font-size:21px; cursor:pointer;
+    box-shadow:0 4px 14px rgba(15,122,110,.42); opacity:0; pointer-events:none; transition:.2s}
+  #toTop.show{opacity:1; pointer-events:auto}
+  #toTop:hover{background:#0c655b}
+  /* 手機目錄鈕（桌機隱藏） */
+  #navToggle{display:none}
+  /* 表格橫向捲動 */
+  .tbl-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:8px}
+  .tbl-scroll table{margin-bottom:0}
+  /* 一二期對照卡強調 */
+  table.cmp td:nth-child(2){color:var(--gas); font-weight:600}
+  table.cmp td:nth-child(3){color:var(--steel); font-weight:600}
+  table.cmp td:first-child{font-weight:600; color:var(--ink)}
+
+  /* === 手機易讀模式 === */
+  @media(max-width:880px){
+    body{font-size:16.5px; line-height:1.78}
+    .ctrl-btn{padding:7px 10px; font-size:12px}
+    /* 側欄改為左側抽屜 */
+    aside{position:fixed; top:0; left:0; width:84%; max-width:320px; height:100vh; z-index:950;
+      transform:translateX(-100%); transition:transform .25s ease; border-bottom:none;
+      border-right:1px solid var(--line); box-shadow:6px 0 30px rgba(0,0,0,.28)}
+    body.nav-open aside{transform:translateX(0)}
+    body.nav-open::after{content:""; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:940}
+    nav{columns:1}
+    #navToggle{display:inline-flex; align-items:center; gap:6px;
+      position:fixed; top:8px; left:10px; z-index:960}
+    main{padding-top:62px}
+    h1{font-size:25px}
+    h2{font-size:21px}
+    .phase-tabs button{padding:9px 6px}
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="navToggle" class="ctrl-btn">☰ 目錄</button>
+<button id="toTop" title="回到頂端">↑</button>
+<div class="wrap">
+<aside>
+  <div class="brand">台中電廠燃氣計畫 · 環說書摘要</div>
+  <div class="brand-sub">一期（2 部）╱二期（4 部）<br>第 5、7、8 章重點整理</div>
+  <div id="navwrap1" class="nav-block on"><nav id="toc1">
+    <div class="grp">第五章 目的及內容</div>
+    <a href="#a51">5.1 開發行為之目的</a>
+    <a href="#a52">5.2 計畫區位</a>
+    <a href="#a53">5.3 主要設施</a>
+    <a href="#a54">5.4 環境保護措施</a>
+    <a href="#a56">5.6 預計時程</a>
+    <div class="grp">第七章 環境影響預測</div>
+    <a href="#a71">7.1 物化環境</a>
+    <a href="#a712" class="sub">7.1.2 空氣品質</a>
+    <a href="#a713" class="sub">7.1.3 溫室氣體</a>
+    <a href="#a78">7.8 健康風險評估</a>
+    <div class="grp">第八章 對策與替代方案</div>
+    <a href="#a81">8.1 環境保護對策</a>
+    <a href="#a83">8.3 替代方案</a>
+  </nav></div>
+  <div id="navwrap2" class="nav-block"><nav id="toc">
+    <div class="grp">第五章 目的及內容</div>
+    <a href="#s51">5.1 開發行為之目的</a>
+    <a href="#s52">5.2 主要設施</a>
+    <a href="#s53">5.3 環境保護措施</a>
+    <a href="#s55">5.5 預計時程</a>
+    <div class="grp">第七章 環境影響預測</div>
+    <a href="#s71" >7.1 物化環境</a>
+    <a href="#s712" class="sub">7.1.2 空氣品質</a>
+    <a href="#s713" class="sub">7.1.3 溫室氣體</a>
+    <div class="grp">第八章 對策與替代方案</div>
+    <a href="#s81">8.1 環境保護對策</a>
+    <a href="#s83">8.3 替代方案</a>
+  </nav></div>
+  <div id="navwrap3" class="nav-block"><nav id="toc3">
+    <div class="grp">機組更替 · 全程整合</div>
+    <a href="#m0">一二期關鍵數據對照</a>
+    <a href="#m1">總覽：從現況到無煤化</a>
+    <a href="#m2">全程更替時序圖</a>
+    <a href="#m3">用煤量逐階段下降</a>
+    <a href="#m4">機組去向總表</a>
+    <a href="#m5">兩條退場路線與效益</a>
+  </nav></div>
+</aside>
+<main>
+  <div class="phase-tabs">
+    <button id="tab1" class="on" onclick="showPhase(1)">一期<small>2 部燃氣 · 109 年</small></button>
+    <button id="tab2" class="" onclick="showPhase(2)">二期<small>4 部燃氣 · 114 年</small></button>
+    <button id="tab3" class="" onclick="showPhase(3)">機組更替<small>全程整合 · 一期→二期</small></button>
+  </div>
+  <div id="panel1" class="phase-panel on"><header class="hero">
+  <div class="eyebrow">環境影響說明書（定稿本）· 重點摘要</div>
+  <h1>台中發電廠新建燃氣機組計畫（一期）</h1>
+  <div class="meta">
+    <span><b>定稿</b> 109 年 2 月</span>
+    <span><b>審查結論公告</b> 109/2/17</span>
+    <span><b>文號</b> 環署綜字第 1090011904A 號</span>
+    <span><b>規模</b> 新建 2 部燃氣複循環機組（單機 130 萬瓩以下）＋LNG 接收站</span>
+  </div>
+  <div class="disc"><b>提醒：</b>本頁為原文重點摘要，數值引自環說書內文與表格。表格係由 PDF 還原，若需正式引用，請以原始 PDF 對應頁為準。</div>
+</header>
+
+<!-- 5.1 -->
+<section id="a51">
+  <h2><span class="num">5.1</span>開發行為之目的</h2>
+  <p class="src">第五章 5.1 開發行為之目的（5.1.1 計畫目的、5.1.2 計畫必要性）<span class="pg">｜頁 5-4</span></p>
+  <p class="lead">配合國家能源轉型政策，擴大天然氣使用、逐步降低燃煤發電比例。於台中發電廠第 9、10 號機南側空地，設置 2 部單機約 130 萬瓩以下之燃氣複循環機組；並於臺中港工業專業區(II)北側既有土地興建液化天然氣接收站，確保供氣穩定。</p>
+  <h3>計畫必要性</h3>
+  <ul>
+    <li><b>打造潔淨能源結構</b>：配合電業法修正（106/1/26 施行），發展再生能源與擴大低碳天然氣使用。新燃氣機組分於 113、114 年陸續運轉，為台中發電廠能源轉型第一步。</li>
+    <li><b>因應負載成長、維持區域供電穩定</b>：再生能源占比規劃達 20% 後，中部需增加燃氣基載機組擔任備援。</li>
+  </ul>
+  <div class="kpis">
+    <div class="kpi"><div class="v">2 部</div><div class="l">新建燃氣複循環機組（CC1、CC2）</div></div>
+    <div class="kpi"><div class="v">260 萬瓩↓</div><div class="l">總裝置容量（單機 130 萬瓩↓）</div></div>
+    <div class="kpi"><div class="v">113／114 年</div><div class="l">CC1／CC2 預定運轉</div></div>
+  </div>
+</section>
+
+<!-- 5.2 -->
+<section id="a52">
+  <h2><span class="num">5.2</span>計畫區位</h2>
+  <p class="src">第五章 5.2 計畫區位<span class="pg">｜頁 5-5</span></p>
+  <p>台中發電廠位於臺中市龍井區臺中港電力專業區，南臨大肚溪、西側台灣海峽、北側臺中港 101～103 號碼頭，廠址面積約 277.5 公頃。既有第 1~10 號機為 55 萬瓩次臨界壓力燃煤機組。</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">13.4 ha</div><div class="l">新建燃氣機組用地（第 9、10 號機南側）</div></div>
+    <div class="kpi"><div class="v">~43.8 ha</div><div class="l">LNG 接收站區（扣冷能專區 6.2 ha）</div></div>
+    <div class="kpi"><div class="v">5 座</div><div class="l">LNG 地上型儲槽（16~18 萬公秉）</div></div>
+  </div>
+</section>
+
+<!-- 5.3 -->
+<section id="a53">
+  <h2><span class="num">5.3</span>主要設施</h2>
+  <p class="src">第五章 5.3 主要設施（5.3.1 發電設施、5.3.2 廠區佈置、5.3.3 生水、5.3.4 燃料、5.3.5 冷卻、5.3.6 開關場輸電）<span class="pg">｜頁 5-8～5-16</span>；LNG 接收站冷能見 5.4.6<span class="pg">｜頁 5-26</span></p>
+  <h3>發電設施</h3>
+  <p>2 部「2 配 1」多軸式燃氣複循環機組（2 部氣渦輪機搭配 1 部汽輪機），單機 130 萬瓩以下，主要設備：<b>氣渦輪機、熱回收（廢熱）鍋爐、汽輪機、冷凝器、發電機</b>。以擔負中載及尖載供電為主，冷凝器採海水冷卻式。</p>
+  <h3>廠區佈置</h3>
+  <ul>
+    <li>2 部燃氣機組設於第 9、10 號機南側計畫用地南側。</li>
+    <li>新設中火南開關場、擴充中火北開關場（161kV／345kV）；區外無新增輸電線路及鐵塔。</li>
+    <li>冷卻循環水由臺中港內取水，新設抽水機房於第 9、10 號機房旁。</li>
+  </ul>
+  <h3>水、燃料、冷卻系統</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">725 CMD</div><div class="l">兩部機組營運初始需水量</div></div>
+    <div class="kpi"><div class="v">190~211 CMD</div><div class="l">回用後每日補充需水量</div></div>
+    <div class="kpi"><div class="v">320 噸/時</div><div class="l">天然氣需求量</div></div>
+    <div class="kpi"><div class="v">~31 cms</div><div class="l">每部機組循環水量</div></div>
+  </div>
+  <div class="note"><b>LNG 接收站（一期特有）：</b>於臺中港工業專業區(II)北側約 50 ha 興建 5 座 16~18 萬 m³ 儲槽、氣化設備（ORV／IFV）、BOG 冷凝區等；輸氣管線送至台中發電廠全長約 3 公里。站區地面設計高程採 +8.5m，預留海平面上升容忍。另規劃冷能利用（BOG 再液化、冰水空調、電廠進氣冷卻等）。</div>
+</section>
+
+<!-- 5.4 -->
+<section id="a54">
+  <h2><span class="num">5.4</span>環境保護措施</h2>
+  <p class="src">第五章 5.4 環境保護措施（5.4.1 空污、5.4.2 廢水、5.4.3 噪音、5.4.4 廢棄物、5.4.5 景觀、5.4.6 冷能）<span class="pg">｜頁 5-17～5-26</span>；表 5.4.1-1<span class="pg"> 頁 5-17</span>、表 5.4.1-2<span class="pg"> 頁 5-20</span></p>
+  <h3>空氣污染防制</h3>
+  <p>以天然氣為燃料，空污以 <b>NOx</b> 為主。採 <b>低氮氧化物燃燒器（LNB）＋選擇性觸媒還原系統（SCR）</b>。2 部機組 NOx 排放量約 <b>1,156 噸/年</b>。煙囪高度約 <b>150 公尺</b>。</p>
+  <div class="tbl-cap">表 5.4.1-1 ｜ 空污排放標準及本計畫規劃濃度</div>
+  <table>
+    <thead><tr><th>污染物</th><th>電力設施排放標準 (103.12.1)</th><th>BACT (105.5.12)</th><th>本計畫規劃排放濃度</th></tr></thead>
+    <tbody>
+      <tr><td>氮氧化物 NOx</td><td>≦10 ppm</td><td>≦10 ppm 或削減率 ≧80%</td><td><b>≦5 ppm</b></td></tr>
+      <tr><td>粒狀污染物</td><td>≦10 mg/Nm³</td><td>≦10 mg/Nm³</td><td>≦10 mg/Nm³</td></tr>
+      <tr><td>硫氧化物 SOx</td><td>≦8 ppm</td><td>≦8 ppm 或削減率 ≧90%</td><td>≦8 ppm</td></tr>
+    </tbody>
+  </table>
+  <div class="tbl-cap">表 5.4.1-2 ｜ 既有燃煤機組空污改善目標（年平均排放濃度）</div>
+  <table>
+    <thead><tr><th>機組</th><th>粒狀污染物</th><th>硫氧化物</th><th>氮氧化物</th></tr></thead>
+    <tbody>
+      <tr><td>燃煤 1~4 號</td><td>≦15 mg/Nm³</td><td>≦25 ppm</td><td>≦45 ppm</td></tr>
+      <tr><td>燃煤 5~10 號</td><td>≦5 mg/Nm³</td><td>≦10 ppm</td><td>≦20 ppm</td></tr>
+    </tbody>
+  </table>
+  <div class="note">全廠減量效益：以 107 年實際排放量為基準，至 114 年（2 部燃氣運轉、燃煤平時 6 部運轉、既有燃煤改善完成），最劣情況下全廠粒狀物＋硫氧化物＋氮氧化物排放總量仍減少約 <b>18,905 噸/年，減量率約 64%</b>。</div>
+
+  <h3>廢水處理系統</h3>
+  <ul>
+    <li><b>生活污水</b>：燃氣機組約 20 噸/日；LNG 接收站約 16 噸/日，預鑄式處理後回收或排港區海域。</li>
+    <li><b>電廠綜合廢水</b>：定期廢水約 510 噸/日；新設綜合廢水處理場（容量約 50~110 噸/時），實際需處理定期廢水約 82 噸/日，並納入第 9、10 號機製程廢水約 331 噸/日全回收。</li>
+  </ul>
+  <h3>噪音、廢棄物、景觀、冷能</h3>
+  <ul>
+    <li><b>噪音</b>：低噪音設備、遠離敏感區、隔音包覆、加強維修。</li>
+    <li><b>廢棄物</b>：事業廢棄物（混合五金、廢觸媒、廢油）依標準貯存與委外回收。</li>
+    <li><b>景觀</b>：延續公園化電廠設計。</li>
+    <li><b>冷能規劃</b>：LNG 氣化釋放冷能，評估 BOG 再液化、冰水空調、電廠進氣冷卻等利用方式。</li>
+  </ul>
+</section>
+
+<!-- 5.6 -->
+<section id="a56">
+  <h2><span class="num">5.6</span>本計畫預計時程</h2>
+  <p class="src">第五章 5.6 本計畫預計時程<span class="pg">｜頁 5-28</span></p>
+  <p>自計畫奉准、顧問聘定、設計、採購、施工、試運轉，趕工進度預計自<b>民國 112 年起</b>陸續完成 2 部燃氣機組取得電業執照、輸儲設備檢查合格證明、消防檢查、水污染防治許可證、固定污染源操作許可證及廢棄物清理計畫書核備函後商轉。</p>
+  <div class="note">LNG 運輸船舶靜穩水域，由臺中港務分公司「臺中港外港區擴建計畫（第一期）」之外廓防波堤提供。</div>
+</section>
+
+<!-- 7.1 -->
+<section id="a71">
+  <h2><span class="num">7.1</span>物化環境（環境影響預測）</h2>
+  <p class="src">第七章 7.1 物化環境<span class="pg">｜頁 7-1 起</span>（7.1.1 地形地質、7.1.2 空氣品質、7.1.3 溫室氣體、7.1.4 噪音振動、7.1.5 水質、7.1.6 廢棄物、7.1.7 剩餘土石方）</p>
+  <p class="lead">空品評估採 AERMOD（固定污染源增量）、CALINE4（交通增量）等模式，涵蓋施工與營運期間。</p>
+</section>
+
+<section id="a712">
+  <h3>7.1.2 空氣品質</h3>
+  <p class="src">第七章 7.1.2 空氣品質<span class="pg">｜頁 7-5</span>；表 7.1.2-6 單一機組排放率及排放量推估<span class="pg"> 頁 7-12</span></p>
+  <h4>施工期間</h4>
+  <ul>
+    <li>SO₂、NO₂、CO 各時段增量或合成濃度<b>均符合</b>空氣品質標準。</li>
+    <li>PM₂.₅ 因背景濃度原本即超標，合成濃度仍有超標情形（非開發增量所致）。</li>
+  </ul>
+  <h4>營運期間</h4>
+  <p>單一機組排氣量約 126,259 Nm³/hr，容量因數 85%，NOx 濃度 5ppm。NO₂ 各受體點最大小時增量 3.6~6.5 ppb、年平均 &lt;0.1~0.2 ppb，疊加背景後<b>均符合</b>空氣品質標準。</p>
+  <div class="tbl-cap">表 7.1.2-6 ｜ 單一機組排放率及排放量推估（含氧率 15%、容量因數 85%）</div>
+  <table>
+    <thead><tr><th>污染物</th><th>濃度 (ppm)</th><th class="n">乾基排氣量 (Nm³/min)</th><th class="n">排放率 (g/s)</th><th class="n">排放量 (噸/年)</th><th class="n">規模門檻 (噸/年)</th></tr></thead>
+    <tbody>
+      <tr><td>粒狀污染物</td><td>—（1.0 mg/Nm³）</td><td class="n">126,259</td><td class="n">2.104</td><td class="n">56.4</td><td class="n">10</td></tr>
+      <tr><td>硫氧化物 SOx</td><td>0.8</td><td class="n">126,259</td><td class="n">4.815</td><td class="n">129.1</td><td class="n">10</td></tr>
+      <tr><td>氮氧化物 NOx</td><td>5.0</td><td class="n">126,259</td><td class="n">21.569</td><td class="n">578.2</td><td class="n">5</td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">單機 NOx 578.2 噸/年；2 部合計約 1,156 噸/年。煙囪高度約 150 公尺。</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">1,156</div><div class="l">2 部機 NOx 排放量（噸/年）</div></div>
+    <div class="kpi"><div class="v">113</div><div class="l">2 部機粒狀物（噸/年）</div></div>
+    <div class="kpi"><div class="v">258</div><div class="l">2 部機硫氧化物（噸/年）</div></div>
+  </div>
+</section>
+<section id="a713">
+  <h3>7.1.3 溫室氣體</h3>
+  <p class="src">第七章 7.1.3 溫室氣體<span class="pg">｜頁 7-41</span>；表 7.1.3-4 本計畫溫室氣體增減量情形<span class="pg"> 頁 7-44</span></p>
+  <div class="kpis">
+    <div class="kpi"><div class="v flame">662.45</div><div class="l">營運期間排放（萬噸 CO₂e/年）</div></div>
+    <div class="kpi"><div class="v">~58.4</div><div class="l">最劣情境淨減碳（萬噸/年）</div></div>
+    <div class="kpi"><div class="v">~218.5</div><div class="l">常態情境淨減碳（萬噸/年）</div></div>
+  </div>
+  <p>排碳強度 ≦0.376 kgCO₂e/kWh；天然氣年使用量約 2,382,720 噸/年。將 4 部燃煤轉備用後，燃煤減排量大於燃氣新增排放量，故淨減碳。</p>
+  <div class="tbl-cap">表 7.1.3-4 ｜ 溫室氣體增減量情形（萬噸 CO₂e/年）</div>
+  <table>
+    <thead><tr><th>年度／情境</th><th class="n">燃煤機組</th><th class="n">新設燃氣</th><th class="n">排碳量合計</th></tr></thead>
+    <tbody>
+      <tr><td>107 年（基準）</td><td class="n">3,414.73</td><td class="n">—</td><td class="n">3,414.73</td></tr>
+      <tr><td>114 年 最劣情境</td><td class="n">2,693.88</td><td class="n">662.45</td><td class="n">3,356.33</td></tr>
+      <tr><td>114 年 常態情境</td><td class="n">2,533.80</td><td class="n">662.45</td><td class="n">3,196.25</td></tr>
+    </tbody>
+  </table>
+  <h4>減碳措施</h4>
+  <ul>
+    <li>高效率轉動／驅動設備、節能電器。</li>
+    <li>行政大樓與主控大樓屋頂設太陽光電約 120 kWp；新建行政大樓採綠建築。</li>
+    <li>公務機車優先電動車；規劃冷能產業發展區。</li>
+  </ul>
+</section>
+
+<!-- 7.8 -->
+<section id="a78">
+  <h2><span class="num">7.8</span>健康風險評估</h2>
+  <p class="src">第七章 7.8 健康風險評估<span class="pg">｜頁 7-152</span></p>
+  <div class="note">本計畫採天然氣潔淨燃料，主要空污為氮氧化物，<b>非屬「健康風險評估規範」第三條所列危害性化學物質</b>，且屬「營運階段可能釋放危害性化學物質之類別、但無危害性化學物質釋放」類別，經評估對國民健康或安全無顯著不利影響，<b>無須進行健康風險評估</b>（美國各州亦將燃氣機組排除於 HAP 排放名單外）。</div>
+</section>
+
+<!-- 8.1 -->
+<section id="a81">
+  <h2><span class="num">8.1</span>環境保護對策</h2>
+  <p class="src">第八章 8.1 環境保護對策<span class="pg">｜頁 8-1 起</span>（8.1.1 施工階段、8.1.2 營運階段）；表 8.1.2-1 既有燃煤機組推估排放總量</p>
+  <h3>8.1.1 施工階段（摘要）</h3>
+  <ul>
+    <li><b>空氣品質</b>：依空品嚴重惡化緊急防制辦法分級灑水／洗掃；落實營建工程空污防制；工區洗車、運土車覆蓋。</li>
+    <li><b>地形地質</b>：樁基礎、地盤改良、耐震設計。</li>
+    <li><b>噪音振動／水質／剩餘土石／廢棄物／社會經濟</b>：分項對策（截流溝＋沉砂池、禁抽地下水、土方覆蓋灑水、敦親睦鄰等）。</li>
+  </ul>
+  <h3>8.1.2 營運階段</h3>
+  <ul>
+    <li>LNB＋SCR 為空污防制設施，依法申請操作許可證並依內容操作。</li>
+    <li><b>燃煤轉備用機制</b>：CC1（預計 113 年）後 2 部燃煤轉備用；CC2（預計 114 年）後再 2 部。非空品不良季備轉容量率 &lt;8% 且 AQI ≤100 才啟動，最多 2 部，超過 6 部時數每年 ≤240 小時；全廠 ≤10 部。</li>
+    <li><b>總量管控機制</b>：兩階段警戒值（排放上限 80%／90%）；達 90% 通知電力調度處優先降載燃煤機組。</li>
+    <li>2 部新燃氣機組設 <b>CEMS</b> 連續監測，確保 NOx 小時值 5ppm（環評承諾值）；逐月累加檢核，2 部燃氣 NOx 年排放量 ≤1,156 噸/年。</li>
+  </ul>
+  <div class="tbl-cap">表 8.1.2-1 ｜ 114 年既有燃煤機組推估排放總量（半年）</div>
+  <table>
+    <thead><tr><th>期間</th><th class="n">粒狀污染物 (噸)</th><th class="n">硫氧化物 (噸)</th><th class="n">氮氧化物 (噸)</th></tr></thead>
+    <tbody>
+      <tr><td>空品不良季（1-3、10-12 月）</td><td class="n">216</td><td class="n">1,220</td><td class="n">1,816</td></tr>
+      <tr><td>非空品不良季（4-9 月）</td><td class="n">381</td><td class="n">2,293</td><td class="n">3,342</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 8.3 -->
+<section id="a83">
+  <h2><span class="num">8.3</span>替代方案</h2>
+  <p class="src">第八章 8.3 替代方案（8.3.1 零方案～8.3.4 環保措施替代方案）；表 8.3.1-1 主方案與替代方案優劣評比<span class="pg"> 頁 8-24</span></p>
+  <p class="lead">評估四大類：零方案、開發地點替代方案、開發方式替代方案、環保措施替代方案。另將「既有 4 號燃煤機組除役方案」一併比較。</p>
+
+  <h3>8.3.1 零方案</h3>
+  <p>零方案＝維持台中發電廠燃煤發電現狀、不執行本計畫。雖可避免主方案影響，但<b>無法配合國家能源政策、土地利用效益低</b>。另比較「4 號燃煤機組提前除役」方案，因任一部燃煤提前除役將使備用容量率過低、開發成本攤提增加，故仍採主方案（燃煤不提前除役、配合燃氣設置轉備用）。</p>
+  <div class="tbl-cap">表 8.3.1-1 ｜ 主方案 / 4 號除役替代 / 零方案（摘要）</div>
+  <table>
+    <thead><tr><th>方案</th><th>內容</th><th>評估</th></tr></thead>
+    <tbody>
+      <tr><td>主方案</td><td>2 部燃氣運轉後 4 部燃煤轉備用，配合增氣減煤</td><td><b>採行</b></td></tr>
+      <tr><td>4 號除役替代</td><td>燃氣運轉後 4 號燃煤除役、3 部轉備用</td><td>備用容量率過低、成本增</td></tr>
+      <tr><td>零方案</td><td>維持既有 10 部燃煤發電現況</td><td>不符能源政策、效益低</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.3.2 開發地點替代方案</h3>
+  <p>本計畫利用廠內既有空地，為綜合考量後最佳開發方案，<b>無需再設定其他開發地點替代方案</b>（另址新建將擴大環境影響範圍）。</p>
+
+  <h3>8.3.3 開發方式替代方案</h3>
+  <p>替代方案設定為<b>燃油複循環機組</b>與主方案（燃氣複循環）比較。綜合均化單位發電成本、環保性能等，<b>主方案燃氣複循環機組明顯優於燃油複循環</b>。</p>
+
+  <h3>8.3.4 環保措施替代方案</h3>
+  <p>溫排水以港區海域排放為主，主方案已儘量回收再利用，<b>無其他排放替代方案</b>。</p>
+</section>
+</div>
+  <div id="panel2" class="phase-panel">
+<header class="hero">
+  <div class="eyebrow">環境影響說明書（定稿本）· 重點摘要</div>
+  <h1>台中電廠第二期新建燃氣機組計畫</h1>
+  <div class="meta">
+    <span><b>定稿</b> 114 年 1 月</span>
+    <span><b>審查結論公告</b> 113/11/18</span>
+    <span><b>文號</b> 環部保字第 1131076061 號</span>
+    <span><b>結論</b> 無須進行第二階段環評</span>
+  </div>
+  <div class="disc"><b>提醒：</b>本頁為原文重點摘要，數值引自環說書內文與表格。表格係由 PDF 還原，若需正式引用，請以原始 PDF 對應頁為準。</div>
+</header>
+
+<!-- 5.1 -->
+<section id="s51">
+  <h2><span class="num">5.1</span>開發行為之目的</h2>
+  <p class="src">第五章 5.1 開發行為之目的（5.1.1 計畫目的、5.1.2 計畫必要性、5.1.3 計畫區位）<span class="pg">｜頁 5-5～5-6</span></p>
+  <p class="lead">配合國家能源轉型政策，擴大天然氣使用、逐步降低燃煤發電比例。台中一期已於 109 年完成兩部燃氣複循環機組環評；二期接續新建四部燃氣複循環機組，並於臺中港工業專業區(II)北側既有儲槽場區增建天然氣儲槽與氣化設施，確保供氣穩定。</p>
+  <h3>計畫必要性</h3>
+  <ul>
+    <li><b>打造潔淨能源結構</b>：配合電業法修正（106/1/26 施行），發展再生能源與擴大低碳天然氣使用。</li>
+    <li><b>維持區域供電穩定</b>：再生能源占比規劃達 30% 後，中部需增加燃氣基載機組擔任備援。</li>
+  </ul>
+  <h3>計畫區位</h3>
+  <p>台中電廠位於臺中市龍井區臺中港電力專業區，南臨大肚溪、西側台灣海峽、北側臺中港 101～102 號碼頭。鄰近敏感區位：南側為大肚溪野生動物保護區、重要濕地；海域鄰中華白海豚重要棲息區。</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">4 部</div><div class="l">新建燃氣複循環機組（燃氣 #3～#6）</div></div>
+    <div class="kpi"><div class="v">550 萬瓩↓</div><div class="l">總裝置容量</div></div>
+    <div class="kpi"><div class="v">34.3 ha</div><div class="l">機組計畫面積</div></div>
+    <div class="kpi"><div class="v">7.6 ha</div><div class="l">儲槽區用地（4 座 16~18 萬公秉）</div></div>
+  </div>
+  <div class="note">利用原燃煤 #1、#2 機組用地、部分露天煤場用地及廠內空地設置；既有燃煤 #1～#10 將逐步除役拆除或轉為緊急備用電力設施。</div>
+</section>
+
+<!-- 5.2 -->
+<section id="s52">
+  <h2><span class="num">5.2</span>主要設施</h2>
+  <p class="src">第五章 5.2 主要設施（5.2.1 發電設施、5.2.2 廠區佈置、5.2.3 生水、5.2.4 燃料、5.2.5 冷卻循環水、5.2.6 輸電）<span class="pg">｜頁 5-9～5-13</span></p>
+  <h3>發電設施</h3>
+  <p>每部燃氣複循環機組含 2 台「1 配 1」機組（1 台氣渦輪機搭配 1 台汽輪機），主要設備：<b>氣渦輪機、熱回收鍋爐、汽輪機、發電機組及冷凝器</b>。具工期短、效率高、反應快、調度彈性佳等優點。冷凝器採海水冷卻式。</p>
+  <h3>廠區佈置</h3>
+  <ul>
+    <li>燃氣 #3、#4 主要設於露天煤場；燃氣 #5、#6 設於原燃煤 #1、#2 機組用地。</li>
+    <li>燃煤 #5～#10 轉為緊急備用電力設施。</li>
+    <li>區外無新增輸電線路及鐵塔，僅設置開關場及電氣設施。</li>
+  </ul>
+  <h3>水、燃料、冷卻系統</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">2,684 噸/日</div><div class="l">營運初期總用水量</div></div>
+    <div class="kpi"><div class="v">646 噸/日</div><div class="l">回用後實際補充需水量</div></div>
+    <div class="kpi"><div class="v">~88%</div><div class="l">發電製程用水回收率</div></div>
+    <div class="kpi"><div class="v">640 噸/時</div><div class="l">天然氣需求量</div></div>
+    <div class="kpi"><div class="v">~34 CMS</div><div class="l">每部機組循環水量</div></div>
+  </div>
+  <p>生水由自來水供應，並搭配雨水貯留及廢水回收。冷卻循環水續由臺中港內取水，沿用既有取水口（兩部機）並於 8、9 號機抽水機房南側新設抽水機房（其餘兩部機）。</p>
+</section>
+
+<!-- 5.3 -->
+<section id="s53">
+  <h2><span class="num">5.3</span>環境保護措施</h2>
+  <p class="src">第五章 5.3 環境保護措施（5.3.1 空污、5.3.2 廢水、5.3.3 噪音、5.3.4 廢棄物、5.3.5 景觀）<span class="pg">｜頁 5-14～5-18</span>；表 5.3.1-1<span class="pg"> 頁 5-15</span>、表 5.3.2-1<span class="pg"> 頁 5-17</span></p>
+  <h3>空氣污染防制</h3>
+  <p>以天然氣為燃料（潔淨燃料），空污以 <b>NOx</b> 為主，SOx 及粒狀物輕微。採 <b>低氮氧化物燃燒器（LNB）</b> 並裝設 <b>選擇性觸媒還原系統（SCR）</b>。四部機組 NOx 排放量約 <b>1,935.2 噸/年</b>。</p>
+  <div class="tbl-cap">表 5.3.1-1 ｜ 空污排放標準及本計畫規劃濃度（NOx）</div>
+  <table>
+    <thead><tr><th>機組狀態</th><th>電力設施排放標準<br>(103.12.1)</th><th>BACT<br>(109.7.10)</th><th>最低可達成排放率(草案)</th><th>本計畫規劃排放濃度</th></tr></thead>
+    <tbody>
+      <tr><td>一般操作</td><td>10 ppm</td><td>10 ppm 或削減率 ≧80%</td><td>4 ppm(年均值)／5 ppm(小時值) 或削減率 ≧90%</td><td><b>4 ppm</b>(年均值)<br><b>5 ppm</b>(小時值)</td></tr>
+      <tr><td>啟停操作</td><td>80 ppm</td><td>—</td><td>—</td><td><b>40 ppm</b>(小時值)</td></tr>
+    </tbody>
+  </table>
+  <h3>廢水處理系統</h3>
+  <ul>
+    <li><b>生活污水</b>約 71 噸/日 → 預鑄式生物處理，自主加嚴至再生水水質後回收。</li>
+    <li><b>電廠綜合廢水</b>：定期廢水約 1,926 噸/日；設 1 座綜合廢水處理廠（含二級＋高級處理），定期廢水約 396 噸/日經處理後全部回收。</li>
+    <li>綠化澆灌回收水自主加嚴（SS、COD、BOD、油脂），每 6 個月檢測 1 次。</li>
+  </ul>
+  <div class="tbl-cap">表 5.3.2-1 ｜ 綜合廢水回收作為綠化澆灌加嚴項目</div>
+  <table>
+    <thead><tr><th>項目</th><th class="n">發電業放流水標準</th><th class="n">本計畫綠化澆灌標準</th></tr></thead>
+    <tbody>
+      <tr><td>懸浮固體 (mg/L)</td><td class="n">30</td><td class="n">25</td></tr>
+      <tr><td>化學需氧量 (mg/L)</td><td class="n">100</td><td class="n">80</td></tr>
+      <tr><td>生化需氧量 (mg/L)</td><td class="n">30</td><td class="n">25</td></tr>
+      <tr><td>油脂 (mg/L)</td><td class="n">10</td><td class="n">8</td></tr>
+    </tbody>
+  </table>
+  <h3>噪音、廢棄物、景觀</h3>
+  <ul>
+    <li><b>噪音</b>：採低噪音設備、主噪音源遠離敏感區、隔音包覆、加強維修。</li>
+    <li><b>廢棄物</b>：事業廢棄物（混合五金、廢觸媒、廢油）依標準貯存，可再利用者委外回收。</li>
+    <li><b>景觀</b>：延續公園化電廠設計，建物色彩與周圍環境融合。</li>
+  </ul>
+</section>
+
+<!-- 5.5 -->
+<section id="s55">
+  <h2><span class="num">5.5</span>本計畫預計時程</h2>
+  <p class="src">第五章 5.5 本計畫預計時程<span class="pg">｜頁 5-20</span>；施工規模見 5.4 施工計畫<span class="pg"> 頁 5-18～5-19</span></p>
+  <p>自計畫奉准、顧問聘定、設計、採購、施工、試運轉至取得電業執照，預估整體作業期程共約 <b>12.5 年</b>。</p>
+  <div class="note"><b>施工規模（5.4）</b>：尖峰施工人力約 3,000 人；挖方約 464 萬方、填方約 164 萬方、剩餘土方（鬆方）約 300 萬方；土方暫置總面積約 25.5 公頃、堆置高度平均不超過 7 公尺。</div>
+</section>
+
+<!-- 7.1 -->
+<section id="s71">
+  <h2><span class="num">7.1</span>物化環境（環境影響預測）</h2>
+  <p class="src">第七章 7.1 物化環境<span class="pg">｜頁 7-1 起</span>（7.1.1 地形地質、7.1.2 空氣品質、7.1.3 溫室氣體、7.1.4 噪音振動、7.1.5 水文水質、7.1.6 土壤、7.1.7 廢棄物、7.1.8 剩餘土石方）</p>
+  <p class="lead">空品評估採 <b>AERMOD</b>（原生性污染物增量）、<b>CALINE4</b>（交通增量）、<b>CMAQ</b>（衍生性 O₃、PM₂.₅）三種模式，涵蓋施工與營運期間。</p>
+</section>
+
+
+
+<section id="s712">
+  <h3>7.1.2 空氣品質</h3>
+  <p class="src">第七章 7.1.2 空氣品質<span class="pg">｜頁 7-8</span>；表 7.1.2-9 單一機組排放量推估<span class="pg"> 頁 7-16</span></p>
+  <h4>施工期間</h4>
+  <ul>
+    <li>氣狀污染物（SO₂、NO₂、CO）疊加背景後<b>均符合</b>空氣品質標準。</li>
+    <li>NO₂ 各敏感點最大小時增量 1.276～3.319 ppb；年平均增量 0.011～0.063 ppb。</li>
+    <li>PM₁₀ 合成濃度符合標準；<b>PM₂.₅ 因背景值已超標，合成濃度未符合標準</b>（非開發增量所致）。</li>
+    <li>抵換：汰換老舊大客／大貨車換電動車 49 部、每日平均洗掃約 8.6 公里。</li>
+  </ul>
+  <h4>營運期間</h4>
+  <p>單一機組排氣量約 8,404,200 Nm³/hr，容量因數 80%。NOx 年均值 4ppm（優於法規）。啟停機（含冷暖啟機最劣情境）NOx 40ppm，以 CEMS 連續監測。本計畫屬<b>降低空品污染之正效益減量計畫</b>。</p>
+  <div class="tbl-cap">表 7.1.2-9 ｜ 本計畫單一機組排放量推估（NOx）</div>
+  <table>
+    <thead><tr><th>機組狀態</th><th class="n">單一機組乾基排氣量 (Nm³/hr)</th><th>排放濃度</th><th class="n">容量因數</th><th class="n">排放量 (噸/年)</th><th class="n">規模門檻 (噸/年)</th></tr></thead>
+    <tbody>
+      <tr><td>一般操作</td><td class="n">8,404,200</td><td>4 ppm(年均)／5 ppm(小時)</td><td class="n">80%</td><td class="n">483.8</td><td class="n">5</td></tr>
+      <tr><td>啟停操作</td><td class="n">98,050</td><td>40 ppm(小時)</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">排放濃度為乾基，含氧率基準 15%。煙囪高度約 100 公尺。</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">1,935.2</div><div class="l">四部機 NOx 排放量（噸/年）</div></div>
+    <div class="kpi"><div class="v">235.6</div><div class="l">四部機粒狀物（噸/年，估算）</div></div>
+    <div class="kpi"><div class="v">673.1</div><div class="l">四部機硫氧化物（噸/年，估算）</div></div>
+  </div>
+  <p class="tnote">溢氨濃度合約規定 2 ppm（廠商保證值）；甲醛排放濃度上限 0.091 ppm（小時值，依美國 EPA）。</p>
+</section>
+
+<section id="s713">
+  <h3>7.1.3 溫室氣體</h3>
+  <p class="src">第七章 7.1.3 溫室氣體<span class="pg">｜頁 7-24</span>；表 7.1.3-2 新建燃氣複循環機組排碳量分析結果<span class="pg"> 頁 7-26</span></p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">5,575</div><div class="l">施工期間排放（公噸 CO₂e/年）</div></div>
+    <div class="kpi"><div class="v flame">1,246.97</div><div class="l">營運期間排放（萬噸 CO₂e/年）</div></div>
+    <div class="kpi"><div class="v">~1,080</div><div class="l">完工終期淨減碳量（萬噸 CO₂e/年）</div></div>
+  </div>
+  <p>施工排放：施工機具約 5,325 公噸＋化糞池約 250 公噸 CO₂e/年。營運排放以天然氣年使用量 4,485,120 噸/年推估，依環境部「溫室氣體排放係數管理表(6.0.4 版)」計算。</p>
+  <div class="note">相較台中一期計畫終期情境（3,196 萬噸 CO₂e/年），二期完工後終期情境<b>淨減碳約 1,080 萬噸 CO₂e/年</b>。</div>
+  <div class="tbl-cap">表 7.1.3-2 ｜ 新建燃氣複循環機組排碳量分析（重點）</div>
+  <table>
+    <thead><tr><th>項目</th><th>數值</th></tr></thead>
+    <tbody>
+      <tr><td>機組總容量</td><td>550 萬瓩</td></tr>
+      <tr><td>容量因數（推估）</td><td>80%</td></tr>
+      <tr><td>天然氣總需求量</td><td>4,485,120 噸/年（5,980,160,000 m³/年）</td></tr>
+      <tr><td>CO₂ 排放係數</td><td>2.0831461081 kgCO₂/m³</td></tr>
+      <tr><td><b>溫室氣體排放當量</b></td><td><b>1,246.97 萬噸 CO₂e/年</b></td></tr>
+    </tbody>
+  </table>
+  <h4>減碳效益措施</h4>
+  <ul>
+    <li>使用節能設備（高效率泵／馬達／變頻器、LED 等）。</li>
+    <li>關注 <b>CCS</b> 碳捕獲與封存：台西盆地深部鹽水層估計總封存量達 137.3 億噸；台中電廠設「減碳技術園區」。</li>
+    <li>雨水貯留設施，間接減少用水所致碳排。</li>
+  </ul>
+</section>
+
+<!-- 8.1 -->
+<section id="s81">
+  <h2><span class="num">8.1</span>環境保護對策</h2>
+  <p class="src">第八章 8.1 環境保護對策<span class="pg">｜頁 8-1 起</span>（8.1.1 施工階段、8.1.2 營運階段）；環境監測詳 8.2 環境管理計畫<span class="pg"> 頁 8-10</span></p>
+  <h3>8.1.1 施工階段</h3>
+  <h4>空氣品質（依空品惡化警告分級辦理）</h4>
+  <table>
+    <thead><tr><th>警告等級</th><th>灑水／洗掃頻率與作為</th></tr></thead>
+    <tbody>
+      <tr><td>初級／中級預警</td><td>主要出入口灑水或洗掃至少每 4 小時 1 次</td></tr>
+      <tr><td>輕度嚴重惡化</td><td>內外及出入口至少每 2 小時 1 次，加強抑制粒狀物</td></tr>
+      <tr><td>中度嚴重惡化</td><td>停止工程、開挖及整地；至少每 1 小時 1 次；禁油漆塗料作業</td></tr>
+      <tr><td>重度嚴重惡化</td><td>停止施工及機具使用；至少每 1 小時 1 次；禁逸散源作業</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>工區出口設洗車設備、運土車覆蓋；車行路徑及裸露地防制面積各達 <b>90%</b>。</li>
+    <li>抵減：補助汰換老舊大客／大貨車換電動車 <b>49 部</b>、每日平均洗掃約 <b>8.6 公里</b>；不足則依「環境部審查開發行為空氣污染物排放量增量抵換處理原則」補足。</li>
+    <li>柴油引擎施工機具應有 <b>1/2 以上</b>取得自主管理標章。</li>
+  </ul>
+  <h4>其他面向（摘要）</h4>
+  <ul>
+    <li><b>地形地質</b>：樁基礎、地盤改良（擠壓砂樁／動力夯實）、耐震設計。</li>
+    <li><b>噪音振動</b>：車輛定期保養、依速限、禁超載、高噪音機具錯開、敦親睦鄰。</li>
+    <li><b>水文水質</b>：雨水截流溝＋臨時沉砂池、洗車廢水沉砂、禁抽地下水、逕流廢水削減計畫。</li>
+    <li><b>剩餘土石</b>：優先景觀造景與道路鋪設，其次公共工程需土，再次合法堆置場；暫置區 1:2 坡比＋覆蓋＋灑水。</li>
+    <li><b>生態</b>：影響區 256 株原生樹移補植；20 株瓊崖海棠優先移植；補植未達 100% 存活以 1:1.2 補植。</li>
+  </ul>
+  <h3>8.1.2 營運階段（重點）</h3>
+  <ul>
+    <li>建立營運階段環境監測計畫、廠區自主監控（測）計畫。</li>
+    <li><b>溢氨濃度</b>配合 SCR 設備操作，於後端裝設即時氨濃度分析儀，採連續式監測。</li>
+    <li>設緊急應變組織與危機通報處理機制。</li>
+  </ul>
+</section>
+
+<!-- 8.3 -->
+<section id="s83">
+  <h2><span class="num">8.3</span>替代方案</h2>
+  <p class="src">第八章 8.3 替代方案<span class="pg">｜頁 8-20 起</span>（8.3.1 零方案～8.3.4 環保措施替代方案）；表 8.3.3-2 主方案與替代方案綜合評估比較表<span class="pg"> 頁 8-23</span></p>
+  <p class="lead">逐項評估四大類：零方案、開發地點替代方案、開發方式替代方案、環保措施替代方案。</p>
+
+  <h3>8.3.1 零方案</h3>
+  <p>零方案＝維持台中一期燃氣計畫規劃（僅新增兩部燃氣機組）。維持現狀雖可避免主方案影響，但<b>無法達成中部潔淨能源發電比例目標</b>，廠區土地利用效益亦低。</p>
+  <div class="tbl-cap">表 8.3.1-1 ｜ 主方案 vs 零方案（摘要）</div>
+  <table>
+    <thead><tr><th>方案</th><th>內容</th><th>評估</th></tr></thead>
+    <tbody>
+      <tr><td>零方案</td><td>本計畫不予開發，維持新增兩部燃氣機組</td><td>無法配合國家能源政策、土地利用效益低</td></tr>
+      <tr><td><b>主計畫</b></td><td>新建四部燃氣複循環機組，燃煤機組逐步退場</td><td><b>採行</b></td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.3.2 開發地點替代方案</h3>
+  <p>本計畫為利用既有廠區用地、綜合考量後之最佳開發方案，<b>無需再設定其他開發地點替代方案</b>。</p>
+
+  <h3>8.3.3 開發方式替代方案</h3>
+  <p>替代方案設定為<b>燃油複循環機組</b>（採輕油）與主方案（燃氣複循環機組）比較。</p>
+  <div class="tbl-cap">表 8.3.3-2 ｜ 主方案 vs 開發方式替代方案 綜合比較</div>
+  <table>
+    <thead><tr><th>項目</th><th>主方案（燃氣複循環）</th><th>替代方案（燃油複循環）</th></tr></thead>
+    <tbody>
+      <tr><td>環保性能</td><td>較佳</td><td>佳</td></tr>
+      <tr><td>負載貢獻度</td><td>高</td><td>低</td></tr>
+      <tr><td>廠址利用率</td><td>高</td><td>低</td></tr>
+      <tr><td>單位發電量發電成本</td><td>發電成本低</td><td>發電成本高</td></tr>
+    </tbody>
+  </table>
+  <div class="note">綜合評估：主計畫採用之<b>燃氣複循環機組明顯優於燃油複循環機組</b>。</div>
+
+  <h3>8.3.4 環保措施替代方案</h3>
+  <p>放流水部分，本計畫已提出各階段具體可行之環保措施與減輕對策，可降低環境影響達到環保目的，<b>故無其他放流水排放之環保措施替代方案</b>。</p>
+</section>
+
+</div>
+  <div id="panel3" class="phase-panel">
+<header class="hero">
+  <div class="eyebrow">跨期整合 · 新舊機組更替全程</div>
+  <h1>台中電廠 燃氣化機組更替時序（一期＋二期整合）</h1>
+  <div class="meta">
+    <span><b>起點</b> 全燃煤運轉（10 部 55 萬瓩燃煤）</span>
+    <span><b>一期</b> 新增 2 部燃氣（113／114 年）</span>
+    <span><b>二期</b> 再增 4 部燃氣（120～124 年）</span>
+    <span><b>終點</b> 6 部燃氣 · 發電無煤化</span>
+  </div>
+  <div class="disc"><b>提醒：</b>本頁整合<b>一期</b>（109 年定稿）與<b>二期</b>（114 年定稿）兩本環說書之機組調度內容。兩本書編寫時點不同：一期規劃燃煤「轉備用」，二期更新為 #1～#4「拆除」、#5～#10「轉緊急備用」；二期較新者為準。年份標示「明載」為環說書記載，「推估」為依錨點推算，僅供參考。</div>
+</header>
+
+<!-- 一二期對照卡 -->
+<section id="m0">
+  <h2><span class="num">對照</span>一二期關鍵數據對照</h2>
+  <p class="lead">同一電廠兩階段燃氣化計畫之關鍵規格並列，免切換分頁即可比較。各數值引自對應期別環說書（詳見一期／二期分頁之📄出處標註）。</p>
+  <div class="tbl-scroll"><table class="cmp">
+    <thead><tr><th>項目</th><th>一期（109 年定稿）</th><th>二期（114 年定稿）</th></tr></thead>
+    <tbody>
+      <tr><td>新建燃氣機組</td><td>2 部（燃氣 #1、#2）</td><td>4 部（燃氣 #3～#6）</td></tr>
+      <tr><td>總裝置容量</td><td>260 萬瓩↓</td><td>550 萬瓩↓</td></tr>
+      <tr><td>機組型式</td><td>2 配 1 多軸式複循環</td><td>1 配 1 複循環</td></tr>
+      <tr><td>煙囪高度</td><td>約 150 公尺</td><td>約 100 公尺</td></tr>
+      <tr><td>NOx 規劃排放濃度</td><td>≦5 ppm（小時值）</td><td>4 ppm（年均）／5 ppm（小時）</td></tr>
+      <tr><td>NOx 年排放量</td><td>約 1,156 噸/年（2 部）</td><td>約 1,935.2 噸/年（4 部）</td></tr>
+      <tr><td>營運期溫室氣體</td><td>662.45 萬噸 CO₂e/年</td><td>1,246.97 萬噸 CO₂e/年</td></tr>
+      <tr><td>天然氣需求量</td><td>320 噸/時</td><td>640 噸/時</td></tr>
+      <tr><td>營運初期用水量</td><td>725 噸/日</td><td>2,684 噸/日</td></tr>
+      <tr><td>燃煤機組去向</td><td>#1～#4 轉備用（非拆除）</td><td>#1～#4 拆除、#5～#10 緊急備用</td></tr>
+      <tr><td>LNG／儲槽</td><td>新建接收站＋5 座儲槽</td><td>增建 4 座儲槽</td></tr>
+      <tr><td>健康風險評估</td><td>免做（非危害性化學物質）</td><td>第七章 7.9 有評估（本摘要未收錄）</td></tr>
+      <tr><td>定稿／文號</td><td>109/2；環署綜字第 1090011904A 號</td><td>114/1；環部保字第 1131076061 號</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tnote">註：一期「6 煤＋2 氣」等配比以「運轉中部數」計；二期以「現存未拆除部數」計，兩者基準不同。</p>
+</section>
+
+<!-- 總覽 -->
+<section id="m1">
+  <h2><span class="num">總覽</span>從現況到發電無煤化</h2>
+  <p class="src">一期：第五章 5.4.1、第八章 8.1.2 燃煤轉備用機制<span class="pg">｜頁 5-17～5-21</span>；二期：第七章 7.1.2 機組運作情境<span class="pg"> 頁 7-18</span>、表 7.1.2-10、圖 7.1.2-5</p>
+  <p class="lead">全程主軸：<b>每商轉 1 部燃氣機組，對應退場 2 部燃煤機組</b>。燃氣機組由一期 2 部（燃氣 #1、#2）起步，二期再增 4 部（燃氣 #3～#6），合計 6 部全燃氣後達成發電無煤化。燃煤 #1～#4 走<b>拆除</b>路線、#5～#10 走<b>轉緊急備用</b>路線（非拆除，僅國安、天災等緊急狀況啟動，全廠測試用煤每年上限 10 萬噸）。</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">0 → 6 部</div><div class="l">燃氣機組（一期 2 ＋ 二期 4）</div></div>
+    <div class="kpi"><div class="v flame">1,260 → 0</div><div class="l">全廠最大用煤量（萬噸／年）</div></div>
+    <div class="kpi"><div class="v">#1～#4</div><div class="l">燃煤拆除</div></div>
+    <div class="kpi"><div class="v">#5～#10</div><div class="l">燃煤轉緊急備用</div></div>
+  </div>
+  <div class="note"><b>計數基準提醒：</b>一期環說書「氣＋煤」配比以<b>運轉中部數</b>計（如 114 年「6 煤＋2 氣」指 6 部燃煤運轉、另 4 部轉備用）；二期則以<b>現存未拆除部數</b>計（如 ~119 年「2 氣＋8 煤」指 #1、#2 已拆除、尚餘 8 部燃煤）。兩者基準不同，跨期對照時請留意。</div>
+</section>
+
+<!-- 全程時序圖 -->
+<section id="m2">
+  <h2><span class="num">時序</span>全程更替時序圖</h2>
+  <p class="tnote">上排圓點＝累計上線燃氣部數（共 6 部）；中段＝該階段運轉配比；下段＝退場燃煤事件。年份標示 <b>明載</b>／<b>推估</b> 區分資料來源。</p>
+  <div class="timeline">
+    <div class="tl-track" style="grid-template-columns:repeat(7,1fr)">
+      <div class="tl-col">
+        <div class="tl-yr">~112 年<span class="yt">明載</span></div>
+        <div class="tl-gas"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">一期 · 起點</span>全燃煤運轉</div>
+        <div class="tl-coal"><span class="run">0氣 + 6~9煤</span><span class="ev">尚無燃氣<br><small>尖載最多 8~9 部燃煤</small></span></div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-yr">113 年<span class="yt">明載</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">一期 · 第一部</span>燃氣 #1（CC1）商轉</div>
+        <div class="tl-coal"><span class="run">1氣 + 8煤</span><span class="ev bk">2 部燃煤轉備用</span></div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-yr">114 年<span class="yt">明載</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">一期 · 終期</span>燃氣 #2（CC2）商轉</div>
+        <div class="tl-coal"><span class="run">2氣 + 6煤</span><span class="ev bk">#1~#4 共 4 部轉備用<br><small>一期全廠減量 64%</small></span></div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-yr">~115–119 年<span class="yt">明載</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">二期 · 商轉前</span>一期 2 氣穩定</div>
+        <div class="tl-coal"><span class="run">2氣 + 8煤</span><span class="ev cut">煤 #1、#2 拆除<br><small>(115 年底啟動拆除)</small></span></div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-yr">120 年<span class="yt">明載</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">二期 · 第一部</span>燃氣 #3 上線</div>
+        <div class="tl-coal"><span class="run">3氣 + 6煤</span><span class="ev cut">煤 #3、#4 拆除<br><small>(120 年底啟動拆除)</small></span></div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-yr">~121–122 年<span class="yt e">推估</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        <div class="tl-stage"><span class="phase">二期 · 第二、三部</span>燃氣 #4、#5 陸續上線</div>
+        <div class="tl-coal"><span class="run">5氣 + 2煤</span><span class="ev bk">煤 #5～#8 轉緊急備用</span></div>
+      </div>
+      <div class="tl-col term">
+        <div class="tl-yr">~123–124 年<span class="yt e">推估</span></div>
+        <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+        <div class="tl-stage"><span class="phase">二期 · 終期</span>燃氣 #6 上線</div>
+        <div class="tl-coal"><span class="run g6">6氣（全燃氣）</span><span class="ev">煤 #1~#4 全拆除<br>#5~#10 緊急備用<br><small>(124 年全數轉備用·明載)</small></span></div>
+      </div>
+    </div>
+    <div class="tl-axis"><span>全燃煤（一期商轉前）</span><span class="arrow">時間 →</span><span>全燃氣 · 發電無煤化</span></div>
+  </div>
+  <div class="note" style="margin-top:14px">
+    <b>年份依據（環說書明載）：</b>一期燃氣 CC1（燃氣 #1）預定 113 年運轉、CC2（燃氣 #2）預定 114 年運轉；一期第一部上線隔年（115 年底）啟動拆除燃煤 #1、#2。二期燃氣 #3 預定 120 年上線、同年（120 年底）啟動拆除燃煤 #3、#4；廠內燃煤機組<b>提前於 124 年全部除役轉為備用</b>。二期燃氣 #4～#6 之逐部商轉年份環說書未逐一明列，圖中以「每商轉 1 部、間隔約 1 年」推估。
+  </div>
+</section>
+
+<!-- 用煤量 -->
+<section id="m3">
+  <h2><span class="num">用煤</span>用煤量逐階段下降</h2>
+  <p class="src">二期：圖 7.1.2-5 各階段最大用煤量（不含緊急備用機組測試）<span class="pg">｜頁 7-12 起</span></p>
+  <p>終期達成發電無煤化；緊急備用機組僅緊急狀況啟動，全廠測試運轉每年上限 10 萬噸。</p>
+  <div class="coal-chart">
+    <div class="bar-row"><span class="bl">現況（一期施工）</span><div class="bar"><i style="width:100%"></i></div><span class="bv">1,260</span></div>
+    <div class="bar-row"><span class="bl">二期商轉前（中佳商轉次年）</span><div class="bar"><i style="width:87.3%"></i></div><span class="bv">1,100</span></div>
+    <div class="bar-row"><span class="bl">第一部 #3 商轉次年</span><div class="bar"><i style="width:71.4%"></i></div><span class="bv">900</span></div>
+    <div class="bar-row"><span class="bl">第二部 #4 商轉次年</span><div class="bar"><i style="width:47.6%"></i></div><span class="bv">600</span></div>
+    <div class="bar-row"><span class="bl">第三部 #5 商轉次年</span><div class="bar"><i style="width:23.8%"></i></div><span class="bv">300</span></div>
+    <div class="bar-row"><span class="bl">全數商轉後次年起（終期）</span><div class="bar"><i class="zero" style="width:1.2%"></i></div><span class="bv flame">0</span></div>
+    <div class="cu">單位：萬噸／年</div>
+  </div>
+</section>
+
+<!-- 機組去向總表 -->
+<section id="m4">
+  <h2><span class="num">機組</span>機組去向總表</h2>
+  <p class="src">綜整自一期第五章 5.1～5.4、二期第五章 5.1～5.2 及第七章 7.1.2</p>
+
+  <h3>新建燃氣機組（6 部）上線時程</h3>
+  <table>
+    <thead><tr><th>燃氣機組</th><th>所屬計畫</th><th>預定上線</th><th>年份依據</th></tr></thead>
+    <tbody>
+      <tr><td>燃氣 #1（CC1）</td><td>一期</td><td>113 年</td><td>明載</td></tr>
+      <tr><td>燃氣 #2（CC2）</td><td>一期</td><td>114 年</td><td>明載</td></tr>
+      <tr><td>燃氣 #3</td><td>二期</td><td>120 年</td><td>明載</td></tr>
+      <tr><td>燃氣 #4</td><td>二期</td><td>~121 年</td><td>推估</td></tr>
+      <tr><td>燃氣 #5</td><td>二期</td><td>~122 年</td><td>推估</td></tr>
+      <tr><td>燃氣 #6</td><td>二期</td><td>~123–124 年</td><td>推估</td></tr>
+    </tbody>
+  </table>
+
+  <h3>既有燃煤機組（10 部）退場去向</h3>
+  <table>
+    <thead><tr><th>燃煤機組</th><th>最終去向</th><th>時程</th></tr></thead>
+    <tbody>
+      <tr><td>#1、#2</td><td><b>拆除</b></td><td>115 年底啟動拆除（二期商轉前完成）</td></tr>
+      <tr><td>#3、#4</td><td><b>拆除</b></td><td>120 年底啟動拆除；終期前全數拆除</td></tr>
+      <tr><td>#5～#10</td><td><b>轉緊急備用</b>（非拆除）</td><td>分階段轉入；124 年全數轉備用·明載</td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">註：一期環說書原規劃 #1～#4 為「轉備用」（非拆除）；二期更新為 #1～#4「拆除」，以較新之二期為準。</p>
+</section>
+
+<!-- 退場路線與效益 -->
+<section id="m5">
+  <h2><span class="num">效益</span>兩條退場路線與減量效益</h2>
+  <p class="src">一期：表 5.4.1-2、第七章 7.1.3 溫室氣體；二期：第七章 7.1.2、7.1.3<span class="pg"> 頁 7-24～7-26</span></p>
+  <div class="ladder">
+    <div class="step">
+      <div class="stage">一期終期<br><small>114 年</small></div>
+      <div class="run"><b>2 氣 + 6 煤</b></div>
+      <div class="bk">#1~#4 轉備用</div>
+      <div class="coal flame">全廠空污減量 64%</div>
+    </div>
+    <div class="step">
+      <div class="stage">二期 · 第一部<br><small>燃氣 #3 商轉</small></div>
+      <div class="run"><b>3 氣 + 6 煤</b></div>
+      <div class="bk">煤 #1~#4 陸續拆除</div>
+      <div class="coal">用煤 900 萬噸 <span class="cut">−360</span></div>
+    </div>
+    <div class="step">
+      <div class="stage">二期 · 第二部<br><small>燃氣 #4 商轉</small></div>
+      <div class="run"><b>4 氣 + 4 煤</b></div>
+      <div class="bk">煤 #5、#6 轉緊備</div>
+      <div class="coal">用煤 600 萬噸</div>
+    </div>
+    <div class="step">
+      <div class="stage">二期 · 第三部<br><small>燃氣 #5 商轉</small></div>
+      <div class="run"><b>5 氣 + 2 煤</b></div>
+      <div class="bk">煤 #5~#8 轉緊備</div>
+      <div class="coal">用煤 300 萬噸</div>
+    </div>
+    <div class="step term">
+      <div class="stage">二期 · 終期<br><small>燃氣 #6 商轉</small></div>
+      <div class="run"><b>6 氣（全燃氣）</b></div>
+      <div class="bk">煤 #5~#10 緊備</div>
+      <div class="coal flame">用煤 0 · 發電無煤化</div>
+    </div>
+  </div>
+  <div class="note"><b>減碳效益：</b>二期終期相較一期終期情境（3,196 萬噸 CO₂e/年）<b>淨減碳約 1,080 萬噸 CO₂e/年</b>。燃煤退場後減排量大於新建燃氣排放量，故全程為淨減碳。空污自二期施工首年（預估 2026／115 年）起逐年調度減排。</div>
+</section>
+</div>
+</main>
+</div>
+<script>
+  const root=document.documentElement, body=document.body;
+
+  /* ---- 分頁切換（含 URL 記憶）---- */
+  function phaseOf(id){ const c=(id||'')[0]; return c==='a'?1:c==='s'?2:c==='m'?3:0; }
+  function showPhase(p,opts){
+    opts=opts||{};
+    for(let i=1;i<=3;i++){
+      document.getElementById('tab'+i).classList.toggle('on',i===p);
+      document.getElementById('panel'+i).classList.toggle('on',i===p);
+      document.getElementById('navwrap'+i).classList.toggle('on',i===p);
+    }
+    if(!opts.noHash){ try{history.replaceState(null,'','#p'+p)}catch(e){} }
+    if(opts.scrollTop!==false) window.scrollTo({top:0,behavior:'auto'});
+  }
+  window.showPhase=showPhase;
+
+  /* ---- 由網址 hash 還原分頁與章節 ---- */
+  function applyHash(){
+    const h=decodeURIComponent(location.hash.slice(1));
+    if(/^p[123]$/.test(h)){ showPhase(+h[1],{noHash:true,scrollTop:false}); return; }
+    const ph=phaseOf(h);
+    if(ph){
+      showPhase(ph,{noHash:true,scrollTop:false});
+      const el=document.getElementById(h);
+      if(el) requestAnimationFrame(()=>el.scrollIntoView({block:'start'}));
+    }
+  }
+  /* 側欄連結：先切到正確分頁再平滑捲動，網址記錄章節 */
+  document.querySelectorAll('aside nav a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1), ph=phaseOf(id);
+      if(!ph) return;
+      e.preventDefault();
+      showPhase(ph,{noHash:true,scrollTop:false});
+      const el=document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      try{history.replaceState(null,'','#'+id)}catch(_){}
+      body.classList.remove('nav-open');
+    });
+  });
+  window.addEventListener('hashchange',applyHash);
+
+  /* ---- 表格加上橫向捲動容器（手機友善）---- */
+  document.querySelectorAll('main table').forEach(t=>{
+    if(t.closest('.tbl-scroll')) return;
+    const w=document.createElement('div'); w.className='tbl-scroll';
+    t.parentNode.insertBefore(w,t); w.appendChild(t);
+  });
+
+  /* ---- 手機目錄抽屜 ---- */
+  document.getElementById('navToggle').onclick=()=>body.classList.toggle('nav-open');
+  document.addEventListener('click',e=>{
+    if(body.classList.contains('nav-open') && !e.target.closest('aside') && !e.target.closest('#navToggle'))
+      body.classList.remove('nav-open');
+  });
+
+  /* ---- 閱讀進度條 + 回到頂端 ---- */
+  const prog=document.getElementById('progress'), toTop=document.getElementById('toTop');
+  function onScroll(){
+    const st=window.scrollY||root.scrollTop, max=root.scrollHeight-window.innerHeight;
+    prog.style.width=(max>0?st/max*100:0)+'%';
+    toTop.classList.toggle('show',st>400);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+  /* ---- 側欄目前章節高亮 ---- */
+  const map=new Map();
+  document.querySelectorAll('aside a[href^="#"]').forEach(a=>map.set(a.getAttribute('href').slice(1),a));
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      document.querySelectorAll('aside a').forEach(l=>l.classList.remove('active'));
+      const a=map.get(e.target.id); if(a)a.classList.add('active');
+    }});
+  },{rootMargin:'-10% 0px -75% 0px',threshold:0});
+  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+
+  /* ---- 初始化 ---- */
+  applyHash(); onScroll();
+</script>
+</body>
+</html>
