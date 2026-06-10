@@ -13,6 +13,8 @@
     --flame:#c8551b;      /* 警示／數據強調 */
     --steel:#37536b;      /* 設施鋼藍 */
     --shadow:0 1px 3px rgba(20,40,50,.06),0 8px 24px rgba(20,40,50,.05);
+    --shadow-hover:0 2px 6px rgba(20,40,50,.10),0 14px 34px rgba(20,40,50,.10);
+    --ring:#0f7a6e; --t:.18s;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -97,37 +99,73 @@
   .ladder .cut{color:var(--flame); font-weight:700; margin-left:2px}
   /* horizontal timeline */
   .timeline{margin:14px 0}
-  .tl-track{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative}
-  .tl-col{position:relative; padding:0 8px; text-align:center}
-  .tl-col:not(:last-child)::after{content:"›"; position:absolute; right:-7px; top:84px;
-    color:var(--rule); font-size:22px; z-index:2}
-  .tl-yr{font-size:12.5px; font-weight:800; color:var(--ink); margin-bottom:6px; font-variant-numeric:tabular-nums}
+  .tl-track{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; position:relative}
+  .tl-col{position:relative; display:flex; flex-direction:column; text-align:center;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:13px 9px; box-shadow:var(--shadow)}
+  .tl-col.term{border-color:var(--gas); background:var(--gas-soft)}
+  .tl-yr{font-size:12.5px; font-weight:800; color:var(--ink); margin-bottom:8px; font-variant-numeric:tabular-nums}
   .tl-yr .yt{display:inline-block; font-size:9.5px; font-weight:600; vertical-align:middle; margin-left:4px;
     padding:1px 5px; border-radius:10px; background:var(--steel); color:#fff; letter-spacing:.03em}
   .tl-yr .yt.e{background:#fff; color:var(--flame); border:1px solid var(--flame)}
-  .tl-gas{font-size:12px; color:var(--gas); min-height:42px; display:flex; align-items:center;
-    justify-content:center; gap:5px; line-height:1.3; font-weight:600}
-  .tl-gas .dot{width:9px; height:9px; border-radius:50%; background:#cdded9; flex:none}
-  .tl-gas .dot.on{background:var(--gas); box-shadow:0 0 0 3px var(--gas-soft)}
+  /* 燃氣圓點 + 連續時間軸軌道（已上線區段染綠）*/
+  .tl-gas{position:relative; font-size:12px; color:var(--gas); min-height:34px; display:flex; align-items:center;
+    justify-content:center; gap:5px; line-height:1.3; font-weight:600; margin-bottom:6px}
+  .tl-gas::before{content:""; position:absolute; left:-13px; right:-13px; top:50%; height:3px;
+    transform:translateY(-50%); background:var(--rule); border-radius:2px; z-index:0}
+  .tl-gas:has(.dot.on)::before{background:rgba(15,122,110,.38)}
+  .tl-col:first-child .tl-gas::before{left:8px}
+  .tl-col:last-child .tl-gas::before{right:8px}
+  .tl-gas .gn{position:relative; z-index:1; font-size:12px; font-weight:800; color:var(--gas);
+    background:var(--panel); border:1px solid var(--gas-soft); border-radius:20px; padding:1px 7px;
+    font-variant-numeric:tabular-nums; margin-right:3px}
+  .tl-gas .gn i{font-style:normal; font-weight:600; font-size:9.5px; opacity:.65}
+  .tl-col:not(:has(.dot.on)) .tl-gas .gn{color:#9aa6b2; border-color:var(--line)}
+  .tl-col.term .tl-gas .gn{background:#fff}
+  .tl-gas .dot{position:relative; z-index:1; width:9px; height:9px; border-radius:50%; background:#cdded9; flex:none}
+  .tl-gas .dot.on{background:var(--gas); box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--gas-soft)}
+  .tl-col.term .tl-gas .dot.on{box-shadow:0 0 0 2px var(--gas-soft),0 0 0 4px #fff}
   .tl-stage{background:var(--steel); color:#fff; border-radius:8px; padding:8px 6px; font-size:12.5px;
     font-weight:600; line-height:1.3; position:relative}
   .tl-col.term .tl-stage{background:var(--gas)}
   .tl-stage .phase{display:block; font-size:10.5px; letter-spacing:.05em; opacity:.8; font-weight:400; margin-bottom:2px}
   .tl-stage small{font-weight:400; opacity:.75}
-  .tl-coal{margin-top:10px; display:flex; flex-direction:column; gap:5px; align-items:center}
+  .tl-coal{margin-top:10px; display:flex; flex-direction:column; gap:6px; align-items:center}
   .tl-coal .run{font-size:12.5px; font-weight:700; color:var(--ink); background:#fff;
     border:1px solid var(--line); border-radius:20px; padding:2px 10px}
-  .tl-coal .run.g6{color:var(--gas); border-color:var(--gas)}
+  .tl-coal .run.g6{color:var(--gas); border-color:var(--gas); background:var(--gas-soft)}
+  /* 退場事件色票：拆除=橘、轉備用=鋼藍 */
   .tl-coal .ev{font-size:11px; color:var(--ink-soft); line-height:1.35}
   .tl-coal .ev small{font-size:10px; opacity:.85}
-  .tl-coal .ev.bk{color:var(--steel)}
-  .tl-coal .ev.cut{color:var(--flame)}
+  .tl-coal .ev.bk,.tl-coal .ev.cut{display:inline-block; padding:4px 9px 4px 8px; border-radius:7px;
+    border-left:3px solid; font-weight:600}
+  .tl-coal .ev.bk{color:var(--steel); background:#eef3f6; border-left-color:var(--steel)}
+  .tl-coal .ev.cut{color:var(--flame); background:#fdf0e8; border-left-color:var(--flame)}
   .tl-use{margin-top:10px; font-size:18px; font-weight:800; color:var(--steel); font-variant-numeric:tabular-nums}
   .tl-use.flame{color:var(--flame)}
   .tl-use .d{display:block; font-size:11px; font-weight:700; color:var(--flame)}
   .tl-axis{display:flex; justify-content:space-between; align-items:center; margin-top:14px;
     padding-top:10px; border-top:2px solid var(--ink); font-size:11.5px; color:var(--ink-soft)}
   .tl-axis .arrow{font-weight:700; color:var(--ink); letter-spacing:.1em}
+  /* 推估欄：虛線邊框傳達不確定性（終期仍維持綠色強調）*/
+  .tl-col:has(.yt.e){border-style:dashed; border-color:#d8b9a6}
+  .tl-col.term:has(.yt.e){border-color:var(--gas)}
+  /* 圖例 */
+  .tl-legend{display:flex; flex-wrap:wrap; gap:8px 16px; margin:4px 0 14px; font-size:11.5px;
+    color:var(--ink-soft); align-items:center}
+  .tl-legend span{display:inline-flex; align-items:center; gap:5px}
+  .tl-legend .k{width:11px; height:11px; border-radius:50%; flex:none}
+  .tl-legend .k.on{background:var(--gas); box-shadow:0 0 0 2px var(--gas-soft)}
+  .tl-legend .k.off{background:#cdded9}
+  .tl-legend .kc{width:14px; height:11px; border-radius:3px; border-left:3px solid; flex:none}
+  .tl-legend .kc.cut{background:#fdf0e8; border-left-color:var(--flame)}
+  .tl-legend .kc.bk{background:#eef3f6; border-left-color:var(--steel)}
+  .tl-legend .kb{font-style:normal; font-size:9.5px; font-weight:600; padding:1px 5px; border-radius:10px}
+  .tl-legend .kb.s{background:var(--steel); color:#fff}
+  .tl-legend .kb.e{background:#fff; color:var(--flame); border:1px solid var(--flame)}
+  /* 終期「無煤化」徽章 */
+  .tl-badge{display:inline-block; margin-top:8px; font-size:10.5px; font-weight:800; letter-spacing:.04em;
+    color:#fff; background:var(--gas); border-radius:20px; padding:2px 9px}
   /* callout */
   .note{background:var(--gas-soft); border-left:3px solid var(--gas); border-radius:0 8px 8px 0;
     padding:12px 16px; margin:16px 0; font-size:14px}
@@ -209,9 +247,13 @@
     /* === 機組更替時序圖：手機改為垂直時間軸，免橫向捲動 === */
     .timeline{overflow:visible}
     .tl-track{display:block; min-width:0; margin-left:4px}
-    .tl-col{text-align:left; position:relative; padding:2px 0 22px 18px;
-      border-left:2px solid var(--rule)}
+    /* 中和桌機卡片：手機改用左連接線＋節點 */
+    .tl-col{display:block; text-align:left; position:relative; padding:2px 0 22px 18px;
+      background:none; border:0; border-radius:0; box-shadow:none; border-left:2px solid var(--rule)}
+    .tl-col.term{background:none; border:0; border-left:2px solid var(--rule)}
+    .tl-col:has(.yt.e){border-left-style:solid; border-left-color:var(--rule)}
     .tl-col:last-child{border-left-color:transparent; padding-bottom:2px}
+    .tl-gas::before{display:none}
     .tl-col:not(:last-child)::after, .tl-col::after{
       content:""; position:absolute; left:-7px; top:5px; right:auto;
       width:12px; height:12px; border-radius:50%; background:var(--steel);
@@ -242,16 +284,53 @@
     .tbl-scroll table{border:none; border-radius:0}
   }
 </style>
+
+<style id="ux">
+  /* 鍵盤焦點環 */
+  a:focus-visible,button:focus-visible,.phase-tabs button:focus-visible{
+    outline:2px solid var(--ring); outline-offset:2px; border-radius:5px}
+  /* 跳至內容（鍵盤/報讀器）*/
+  .skip{position:absolute; left:8px; top:-46px; z-index:1100; background:var(--gas); color:#fff;
+    padding:8px 14px; border-radius:0 0 8px 8px; font-size:13px; font-weight:600; text-decoration:none;
+    transition:top var(--t)}
+  .skip:focus{top:0}
+  /* 內文跨分頁連結 */
+  .xtab{color:var(--gas); font-weight:600; text-decoration:underline; text-underline-offset:2px}
+  /* 跳至內容後不在容器上顯示焦點框 */
+  #mainContent:focus{outline:none}
+  /* === 互動回饋（僅滑鼠裝置）=== */
+  @media (hover:hover){
+    .kpi,.ladder .step,.tl-col{transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
+    .kpi:hover,.ladder .step:hover,.tl-col:hover{
+      transform:translateY(-2px); box-shadow:var(--shadow-hover); border-color:var(--gas)}
+    .ladder .step.term:hover,.tl-col.term:hover{border-color:var(--gas)}
+    main tbody tr{transition:background var(--t)}
+    main tbody tr:hover{background:var(--gas-soft)}
+  }
+  .phase-tabs button{transition:background var(--t),color var(--t),border-color var(--t)}
+  /* 分頁切換淡入 */
+  @keyframes panelIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  .phase-panel.on{animation:panelIn .22s ease both}
+  /* 尊重「減少動態效果」 */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important;
+      transition-duration:.001ms !important}
+    .phase-panel.on{animation:none}
+    #progress{transition:none}
+  }
+</style>
 </head>
 <body>
+<a class="skip" href="#mainContent">跳至內容</a>
 <div id="progress"></div>
 <button id="navToggle" class="ctrl-btn" aria-expanded="false" aria-controls="navwrap1">☰ 目錄</button>
 <button id="toTop" title="回到頂端">↑</button>
 <div class="wrap">
-<aside>
+<aside aria-label="章節導覽">
   <div class="brand">台中電廠燃氣計畫 · 環說書摘要</div>
   <div class="brand-sub">一期（2 部）╱二期（4 部）<br>第 5、7、8 章重點整理</div>
-  <div id="navwrap1" class="nav-block on"><nav id="toc1">
+  <div id="navwrap1" class="nav-block on"><nav id="toc1" aria-label="一期章節">
     <div class="grp">第五章 目的及內容</div>
     <a href="#a51">5.1 開發行為之目的</a>
     <a href="#a52">5.2 計畫區位</a>
@@ -267,7 +346,7 @@
     <a href="#a81">8.1 環境保護對策</a>
     <a href="#a83">8.3 替代方案</a>
   </nav></div>
-  <div id="navwrap2" class="nav-block"><nav id="toc">
+  <div id="navwrap2" class="nav-block"><nav id="toc" aria-label="二期章節">
     <div class="grp">第五章 目的及內容</div>
     <a href="#s51">5.1 開發行為之目的</a>
     <a href="#s52">5.2 主要設施</a>
@@ -281,7 +360,7 @@
     <a href="#s81">8.1 環境保護對策</a>
     <a href="#s83">8.3 替代方案</a>
   </nav></div>
-  <div id="navwrap3" class="nav-block"><nav id="toc3">
+  <div id="navwrap3" class="nav-block"><nav id="toc3" aria-label="機組更替章節">
     <div class="grp">機組更替 · 全程整合</div>
     <a href="#m0">一二期關鍵數據對照</a>
     <a href="#m1">總覽：從現況到無煤化</a>
@@ -291,11 +370,11 @@
     <a href="#m5">兩條退場路線與效益</a>
   </nav></div>
 </aside>
-<main>
+<main id="mainContent" tabindex="-1">
   <div class="phase-tabs" role="tablist" aria-label="計畫分頁">
-    <button id="tab1" class="on" role="tab" aria-selected="true" aria-controls="panel1" onclick="showPhase(1)">一期<small>2 部燃氣 · 109 年</small></button>
-    <button id="tab2" class="" role="tab" aria-selected="false" aria-controls="panel2" onclick="showPhase(2)">二期<small>4 部燃氣 · 114 年</small></button>
-    <button id="tab3" class="" role="tab" aria-selected="false" aria-controls="panel3" onclick="showPhase(3)">機組更替<small>全程整合 · 一期→二期</small></button>
+    <button id="tab1" class="on" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" onclick="showPhase(1)">一期<small>2 部燃氣 · 109 年</small></button>
+    <button id="tab2" class="" role="tab" aria-selected="false" aria-controls="panel2" tabindex="-1" onclick="showPhase(2)">二期<small>4 部燃氣 · 114 年</small></button>
+    <button id="tab3" class="" role="tab" aria-selected="false" aria-controls="panel3" tabindex="-1" onclick="showPhase(3)">機組更替<small>全程整合 · 一期→二期</small></button>
   </div>
   <div id="panel1" class="phase-panel on" role="tabpanel" aria-labelledby="tab1"><header class="hero">
   <div class="eyebrow">環境影響說明書（定稿本）· 重點摘要</div>
@@ -789,7 +868,7 @@
 <!-- 一二期對照卡 -->
 <section id="m0">
   <h2><span class="num">對照</span>一二期關鍵數據對照</h2>
-  <p class="lead">同一電廠兩階段燃氣化計畫之關鍵規格並列，免切換分頁即可比較。各數值引自對應期別環說書（詳見一期／二期分頁之📄出處標註）。</p>
+  <p class="lead">同一電廠兩階段燃氣化計畫之關鍵規格並列，免切換分頁即可比較。各數值引自對應期別環說書（詳見 <a class="xtab" href="#p1">一期</a>／<a class="xtab" href="#p2">二期</a> 分頁之📄出處標註）。</p>
   <div class="tbl-scroll"><table class="cmp">
     <thead><tr><th>項目</th><th>一期（109 年定稿）</th><th>二期（114 年定稿）</th></tr></thead>
     <tbody>
@@ -829,6 +908,14 @@
 <section id="m2">
   <h2><span class="num">時序</span>全程更替時序圖</h2>
   <p class="tnote">上排圓點＝累計上線燃氣部數（共 6 部）；中段＝該階段運轉配比；下段＝退場燃煤事件。年份標示 <b>明載</b>／<b>推估</b> 區分資料來源。</p>
+  <div class="tl-legend" aria-hidden="true">
+    <span><i class="k on"></i>已上線燃氣</span>
+    <span><i class="k off"></i>未上線</span>
+    <span><i class="kc cut"></i>燃煤拆除</span>
+    <span><i class="kc bk"></i>轉緊急備用</span>
+    <span><i class="kb s">明載</i>環說書記載</span>
+    <span><i class="kb e">推估</i>依錨點推算</span>
+  </div>
   <div class="timeline">
     <div class="tl-track" style="grid-template-columns:repeat(7,1fr)">
       <div class="tl-col">
@@ -871,7 +958,7 @@
         <div class="tl-yr">~123–124 年<span class="yt e">推估</span></div>
         <div class="tl-gas"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
         <div class="tl-stage"><span class="phase">二期 · 終期</span>燃氣 #6 上線</div>
-        <div class="tl-coal"><span class="run g6">6氣（全燃氣）</span><span class="ev">煤 #1~#4 全拆除<br>#5~#10 緊急備用<br><small>(124 年全數轉備用·明載)</small></span></div>
+        <div class="tl-coal"><span class="run g6">6氣（全燃氣）</span><span class="tl-badge">✓ 發電無煤化</span><span class="ev">煤 #1~#4 全拆除<br>#5~#10 緊急備用<br><small>(124 年全數轉備用·明載)</small></span></div>
       </div>
     </div>
     <div class="tl-axis"><span>全燃煤（一期商轉前）</span><span class="arrow">時間 →</span><span>全燃氣 · 發電無煤化</span></div>
@@ -979,6 +1066,7 @@
       const tab=document.getElementById('tab'+i);
       tab.classList.toggle('on',i===p);
       tab.setAttribute('aria-selected', i===p ? 'true' : 'false');
+      tab.tabIndex = i===p ? 0 : -1;
       document.getElementById('panel'+i).classList.toggle('on',i===p);
       document.getElementById('navwrap'+i).classList.toggle('on',i===p);
     }
@@ -1020,6 +1108,27 @@
     if(t.closest('.tbl-scroll')) return;
     const w=document.createElement('div'); w.className='tbl-scroll';
     t.parentNode.insertBefore(w,t); w.appendChild(t);
+  });
+
+  /* ---- 分頁標籤鍵盤操作（方向鍵／Home／End）---- */
+  const tabs=[1,2,3].map(i=>document.getElementById('tab'+i));
+  document.querySelector('.phase-tabs').addEventListener('keydown',e=>{
+    const cur=tabs.indexOf(document.activeElement); if(cur<0) return;
+    let n=cur;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown') n=(cur+1)%3;
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp') n=(cur+2)%3;
+    else if(e.key==='Home') n=0;
+    else if(e.key==='End') n=2;
+    else return;
+    e.preventDefault(); showPhase(n+1,{scrollTop:false}); tabs[n].focus();
+  });
+
+  /* ---- 時序圖：依燃氣圓點自動標註累計部數 N/6（永遠與圓點同步）---- */
+  document.querySelectorAll('.tl-gas').forEach(g=>{
+    if(g.querySelector('.gn')) return;
+    const total=g.querySelectorAll('.dot').length, on=g.querySelectorAll('.dot.on').length;
+    const s=document.createElement('span'); s.className='gn';
+    s.innerHTML=on+'<i>/'+total+'</i>'; g.insertBefore(s,g.firstChild);
   });
 
   /* ---- 手機目錄抽屜 ---- */
