@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>台中電廠二期環說書 重點摘要｜5、7、8 章</title>
+<title>台中電廠燃氣計畫環說書 重點摘要（一期／二期／機組更替）</title>
 <style>
   :root{
     --ink:#1b2733; --ink-soft:#48586a; --paper:#fbfaf6; --panel:#ffffff;
@@ -18,7 +18,7 @@
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--paper); color:var(--ink);
-    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;
     line-height:1.72; font-size:16px;
   }
   /* layout */
@@ -215,7 +215,7 @@
 </head>
 <body>
 <div id="progress"></div>
-<button id="navToggle" class="ctrl-btn">☰ 目錄</button>
+<button id="navToggle" class="ctrl-btn" aria-expanded="false" aria-controls="navwrap1">☰ 目錄</button>
 <button id="toTop" title="回到頂端">↑</button>
 <div class="wrap">
 <aside>
@@ -262,12 +262,12 @@
   </nav></div>
 </aside>
 <main>
-  <div class="phase-tabs">
-    <button id="tab1" class="on" onclick="showPhase(1)">一期<small>2 部燃氣 · 109 年</small></button>
-    <button id="tab2" class="" onclick="showPhase(2)">二期<small>4 部燃氣 · 114 年</small></button>
-    <button id="tab3" class="" onclick="showPhase(3)">機組更替<small>全程整合 · 一期→二期</small></button>
+  <div class="phase-tabs" role="tablist" aria-label="計畫分頁">
+    <button id="tab1" class="on" role="tab" aria-selected="true" aria-controls="panel1" onclick="showPhase(1)">一期<small>2 部燃氣 · 109 年</small></button>
+    <button id="tab2" class="" role="tab" aria-selected="false" aria-controls="panel2" onclick="showPhase(2)">二期<small>4 部燃氣 · 114 年</small></button>
+    <button id="tab3" class="" role="tab" aria-selected="false" aria-controls="panel3" onclick="showPhase(3)">機組更替<small>全程整合 · 一期→二期</small></button>
   </div>
-  <div id="panel1" class="phase-panel on"><header class="hero">
+  <div id="panel1" class="phase-panel on" role="tabpanel" aria-labelledby="tab1"><header class="hero">
   <div class="eyebrow">環境影響說明書（定稿本）· 重點摘要</div>
   <h1>台中發電廠新建燃氣機組計畫（一期）</h1>
   <div class="meta">
@@ -498,7 +498,7 @@
   <p>溫排水以港區海域排放為主，主方案已儘量回收再利用，<b>無其他排放替代方案</b>。</p>
 </section>
 </div>
-  <div id="panel2" class="phase-panel">
+  <div id="panel2" class="phase-panel" role="tabpanel" aria-labelledby="tab2">
 <header class="hero">
   <div class="eyebrow">環境影響說明書（定稿本）· 重點摘要</div>
   <h1>台中電廠第二期新建燃氣機組計畫</h1>
@@ -743,7 +743,7 @@
 </section>
 
 </div>
-  <div id="panel3" class="phase-panel">
+  <div id="panel3" class="phase-panel" role="tabpanel" aria-labelledby="tab3">
 <header class="hero">
   <div class="eyebrow">跨期整合 · 新舊機組更替全程</div>
   <h1>台中電廠 燃氣化機組更替時序（一期＋二期整合）</h1>
@@ -946,10 +946,13 @@
   function showPhase(p,opts){
     opts=opts||{};
     for(let i=1;i<=3;i++){
-      document.getElementById('tab'+i).classList.toggle('on',i===p);
+      const tab=document.getElementById('tab'+i);
+      tab.classList.toggle('on',i===p);
+      tab.setAttribute('aria-selected', i===p ? 'true' : 'false');
       document.getElementById('panel'+i).classList.toggle('on',i===p);
       document.getElementById('navwrap'+i).classList.toggle('on',i===p);
     }
+    document.getElementById('navToggle').setAttribute('aria-controls','navwrap'+p);
     if(!opts.noHash){ try{history.replaceState(null,'','#p'+p)}catch(e){} }
     if(opts.scrollTop!==false) window.scrollTo({top:0,behavior:'auto'});
   }
@@ -977,6 +980,7 @@
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
       try{history.replaceState(null,'','#'+id)}catch(_){}
       body.classList.remove('nav-open');
+      document.getElementById('navToggle').setAttribute('aria-expanded','false');
     });
   });
   window.addEventListener('hashchange',applyHash);
@@ -989,10 +993,13 @@
   });
 
   /* ---- 手機目錄抽屜 ---- */
-  document.getElementById('navToggle').onclick=()=>body.classList.toggle('nav-open');
+  const navToggle=document.getElementById('navToggle');
+  function syncNav(){ navToggle.setAttribute('aria-expanded', body.classList.contains('nav-open') ? 'true' : 'false'); }
+  navToggle.onclick=()=>{ body.classList.toggle('nav-open'); syncNav(); };
   document.addEventListener('click',e=>{
-    if(body.classList.contains('nav-open') && !e.target.closest('aside') && !e.target.closest('#navToggle'))
-      body.classList.remove('nav-open');
+    if(body.classList.contains('nav-open') && !e.target.closest('aside') && !e.target.closest('#navToggle')){
+      body.classList.remove('nav-open'); syncNav();
+    }
   });
 
   /* ---- 閱讀進度條 + 回到頂端 ---- */
