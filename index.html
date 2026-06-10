@@ -145,11 +145,6 @@
     aside{position:static; height:auto; border-right:none; border-bottom:1px solid var(--line)}
     main{padding:32px 22px 80px}
     nav{columns:2; column-gap:18px}
-    .ladder{grid-template-columns:1fr 1fr}
-    .tl-track{min-width:620px}
-    .timeline{overflow-x:auto; -webkit-overflow-scrolling:touch}
-    .bar-row{grid-template-columns:130px 1fr 48px; gap:8px}
-    .bar-row .bl{font-size:11.5px}
   }
 </style>
 
@@ -210,6 +205,41 @@
     h1{font-size:25px}
     h2{font-size:21px}
     .phase-tabs button{padding:9px 6px}
+
+    /* === 機組更替時序圖：手機改為垂直時間軸，免橫向捲動 === */
+    .timeline{overflow:visible}
+    .tl-track{display:block; min-width:0; margin-left:4px}
+    .tl-col{text-align:left; position:relative; padding:2px 0 22px 18px;
+      border-left:2px solid var(--rule)}
+    .tl-col:last-child{border-left-color:transparent; padding-bottom:2px}
+    .tl-col:not(:last-child)::after, .tl-col::after{
+      content:""; position:absolute; left:-7px; top:5px; right:auto;
+      width:12px; height:12px; border-radius:50%; background:var(--steel);
+      border:2px solid var(--paper); font-size:0; line-height:0; color:transparent}
+    .tl-col.term::after{background:var(--gas)}
+    .tl-yr{font-size:14px; margin-bottom:6px}
+    .tl-gas{justify-content:flex-start; min-height:0; flex-wrap:wrap; margin:2px 0 8px}
+    .tl-coal{flex-direction:row; flex-wrap:wrap; align-items:center;
+      justify-content:flex-start; gap:8px 10px; margin-top:10px}
+    .tl-coal .ev{text-align:left}
+    .tl-use{margin-top:8px}
+    .tl-axis{flex-direction:column; gap:6px; align-items:stretch; text-align:center}
+
+    /* === 退場階梯：兩欄、終期卡跨欄強調 === */
+    .ladder{grid-template-columns:1fr 1fr; gap:9px}
+    .ladder .step.term{grid-column:1 / -1}
+    .ladder .stage{min-height:0}
+
+    /* === 用煤量長條圖：標籤獨立一行，長條與數值同列 === */
+    .bar-row{grid-template-columns:1fr 46px; grid-template-areas:"lbl lbl" "bar val";
+      gap:4px 10px; align-items:center}
+    .bar-row .bl{grid-area:lbl; text-align:left; font-size:12px; font-weight:600; color:var(--ink)}
+    .bar-row .bar{grid-area:bar}
+    .bar-row .bv{grid-area:val}
+
+    /* === 對照表：橫向捲動容器加視覺提示，避免版面溢出 === */
+    .tbl-scroll{border:1px solid var(--line); border-radius:10px}
+    .tbl-scroll table{border:none; border-radius:0}
   }
 </style>
 </head>
